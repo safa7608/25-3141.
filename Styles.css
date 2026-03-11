@@ -1,0 +1,28 @@
+/* External CSS */
+
+/* Style for Highlight 3 (h1) - external */
+#highlight3 {
+    color: purple;
+    text-decoration: underline;
+}
+
+/* Style for Building 3 (h3) - external */
+#building3 {
+    font-family: 'Times New Roman', serif;
+    font-weight: normal;
+}
+
+/* Style for all h2, h4, and paragraphs (using classes if needed) */
+h2 {
+    font-size: 24px;
+}
+
+h4 {
+    font-size: 20px;
+}
+
+/* Style for containers if needed */
+.container {
+    display: inline-block;
+    margin: 10px;
+}
