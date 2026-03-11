@@ -1,26 +1,11 @@
 body{
-background-color: lavender;
 font-family: Arial, sans-serif;
-text-align: center;
 }
 
-#container{
-width: 80%;
-margin: auto;
-}
-
-#main-title{
-color: purple;
-font-size: 40px;
-}
-
-.section-title{
+h2{
 color: darkblue;
-margin-top: 20px;
 }
 
-.text{
-font-size: 18px;
-line-height: 1.6;
-color: black;
+p{
+font-size: 16px;
 }
