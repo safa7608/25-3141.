@@ -1,153 +1,385 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    /* Internal CSS */
-    .paragraph-internal {
-      color: orange;
-      font-weight: bold;
-    }
-    
-    .highlight-internal {
-      color: white;
-      background-color: black;
-      padding: 10px;
-      display: inline-block;
-    }
-    
-    .building-internal {
-      color: blue;
-      background-color: lightblue;
-      padding: 10px;
-      display: inline-block;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <title>Assignment Task</title>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        /* Internal CSS */
+        /* Style for paragraph 2 (internal) */
+        #para2 {
+            color: orange;
+            font-weight: bold;
+        }
+
+        /* Style for h1 (internal) */
+        .highlight2 {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Style for h3 (internal) */
+        .building2 {
+            font-family: 'Courier New', monospace;
+        }
+    </style>
 </head>
-<body>
+<body style="background-color: lightblue; display: flex; justify-content: center; align-items: flex-start; min-height: 100vh;">
+    <div style="text-align: center; width: 80%;">
 
-  <!-- Your navbar -->
-  <div class="navbar">
-    <a href="#">Home</a>
-    <a href="#">Contents</a>
-    <a href="#">About</a>
-    <input type="text" placeholder="Search perfumes..." class="search-box">
-  </div>
+        <!-- Headings -->
+        <h1 id="highlight1" style="color: red;">Highlight 1</h1>
+        <h1 class="highlight2">Highlight 2</h1>
+        <h1 id="highlight3">Highlight 3</h1>
 
-  <!-- Inline CSS examples -->
-  <p style="color: blue; font-style: italic;">Paragraph 1</p>
-  <h1 style="color: red;">Highlight 1</h1>
-  <h3 style="color: green;">Building 1</h3>
+        <h2>Subheading for h2</h2>
+        <h3 class="building1" style="color: green;">Building 1</h3>
+        <h3 class="building2">Building 2</h3>
+        <h3 id="building3">Building 3</h3>
 
-  <!-- Internal CSS examples -->
-  <p class="paragraph-internal">Paragraph 2</p>
-  <h1 class="highlight-internal">Highlight 2</h1>
-  <h3 class="building-internal">Building 2</h3>
+        <!-- Paragraphs -->
+        <p style="color: blue; font-style: italic;">Paragraph 1</p>
+        <p id="para2">Paragraph 2</p>
+        <p class="para3">Paragraph 3</p>
+        <p class="para4">Paragraph 4</p>
+        <p class="para5">Paragraph 5</p>
+        <p class="para6">Paragraph 6</p>
 
-  <!-- External CSS examples -->
-  <p class="paragraph-external">Paragraph 3</p>
-  <h1 class="highlight-external">Highlight 3</h1>
-  <h3 class="building-external">Building 3</h3>
+        <!-- Containers with images -->
+        <div class="container" style="margin-top: 20px;">
+            <img src="https://via.placeholder.com/150" alt="Image 1" />
+        </div>
+        <div class="container">
+            <img src="https://via.placeholder.com/150" alt="Image 2" />
+        </div>
+        <div class="container">
+            <img src="https://via.placeholder.com/150" alt="Image 3" />
+        </div>
+        <div class="container">
+            <img src="https://via.placeholder.com/150" alt="Image 4" />
+        </div>
+        <div class="container">
+            <img src="https://via.placeholder.com/150" alt="Image 5" />
+        </div>
 
-  <!-- h1-h4 with classes and IDs -->
-  <h1 class="main-title">Main Title (class)</h1>
-  <h1 id="brand-name">Brand Name (ID)</h1>
-  
-  <h2 class="subtitle">Subtitle (class)</h2>
-  <h2 id="collection-header">Collection Header (ID)</h2>
-  
-  <h3 class="product-name">Product Name (class)</h3>
-  <h3 id="special-offer">Special Offer (ID)</h3>
-  
-  <h4 class="detail-title">Detail Title (class)</h4>
-  <h4 id="contact-info">Contact Info (ID)</h4>
-
-  <!-- 6 paragraphs with classes -->
-  <p class="intro-text">Intro text</p>
-  <p class="description">Description</p>
-  <p class="highlight">Highlight</p>
-  <p class="note">Note</p>
-  <p class="warning">Warning</p>
-  <p class="success">Success</p>
-
-  <!-- 6 paragraphs with IDs -->
-  <p id="mission-statement">Mission statement</p>
-  <p id="vision-text">Vision text</p>
-  <p id="founder-quote">Founder quote</p>
-  <p id="delivery-info">Delivery info</p>
-  <p id="quality-promise">Quality promise</p>
-  <p id="customer-service">Customer service</p>
-
-  <!-- Your original content -->
-  <h1>UDGOON COLLECTIONS</h1>
-  <p><b>Welcome to Udgoon Collection.</b></p>
-  <p><i>We offer high quality perfumes for all fragrance lovers.</i></p>
-  <p><u>We deliver countrywide from Nairobi, Kenya.</u></p>
-
-  <!-- 5+ image containers -->
-  <div class="image-container">
-    <img src="Images/P1.jpg" alt="perfume">
-  </div>
-  <div class="image-container">
-    <img src="Images/P2.jpg" alt="perfume">
-  </div>
-  <div class="image-container">
-    <img src="Images/P3.jpg" alt="perfume">
-  </div>
-  <div class="image-container">
-    <img src="Images/P4.jpg" alt="perfume">
-  </div>
-  <div class="image-container">
-    <img src="Images/P5.jpg" alt="perfume">
-  </div>
-  <div class="image-container">
-    <img src="Images/P6.jpg" alt="perfume">
-  </div>
-
-  <!-- Rest of your content unchanged -->
-  <p>Established on 17<sup>th</sup> February 2026.</p>
-  <p>Our perfume concentration includes CO<sub>2</sub> extraction methods.</p>
-  <p><strike>Old price was KSh 3000.</strike></p>
-  <p><mark>Now available at special discounted prices!</mark></p>
-  <p><q>Perfume is the art that makes memory speak.</q></p>
-
-  <blockquote>
-    "Good fragrance is the final touch of elegance."
-  </blockquote>
-
-  <p>
-    We sell original perfumes.<br>
-    Affordable prices.<br>
-    Fast delivery.<br>
-    Customer satisfaction guaranteed.
-  </p>
-
-  <h3>Our Perfume Collection</h3>
-  <ul>
-    <li>Lattafa Khamrah</li>
-    <li>Yara</li>
-    <li>Asad</li>
-    <li>Oud Mood</li>
-    <li>Mohra Silk Rose</li>
-  </ul>
-
-  <h3>How To Order</h3>
-  <ol>
-    <li>Choose your perfume</li>
-    <li>Contact us</li>
-    <li>Confirm availability</li>
-    <li>Make payment</li>
-    <li>Receive delivery</li>
-  </ol>
-
-  <footer class="footer">
-    <h2>Contact Us</h2>
-    <p>Email: perfumes@gmail.com</p>
-    <p>Phone: +254 712 345 678</p>
-    <p>Location: Nairobi, Kenya</p>
-    <p>© 2026 Udgoon Collection</p>
-  </footer>
-
+    </div>
 </body>
-  </html>
+</html>
+
+<div class="navbar">
+  <a href="#">Home</a>
+  <a href="#">Contents</a>
+  <a href="#">About</a>
+
+  <input type="text" placeholder="Search perfumes..." class="search-box">
+</div>
+<style>
+.navbar {
+  background-color: black;
+  padding: 15px;
+  text-align: center;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin: 20px;
+  font-size: 18px;
+}
+
+.navbar a:hover {
+  color: pink;
+}
+
+.search-box {
+  padding: 6px;
+  margin-left: 20px;
+  border-radius: 5px;
+  border: none;
+}
+</style>
+<h1>UDGOON COLLECTIONS</h1>
+
+<p><b>Welcome to Udgoon Collection.</b></p>
+
+
+<p><i>We offer high quality perfumes for all fragrance lovers.</i></p>
+
+
+<p><u>We deliver countrywide from Nairobi, Kenya.</u></p>
+
+
+<p>Established on 17<sup>th</sup> February 2026.</p>
+
+<p>Our perfume concentration includes CO<sub>2</sub> extraction methods.</p>
+
+
+<p><strike>Old price was KSh 3000.</strike></p>
+
+
+<p><mark>Now available at special discounted prices!</mark></p>
+
+
+<p><q>Perfume is the art that makes memory speak.</q></p>
+
+
+<blockquote>
+"Good fragrance is the final touch of elegance."
+</blockquote>
+
+<style>
+blockquote {
+    margin: 30px auto;
+    padding: 20px;
+    width: 60%;
+    background-color: #f8f8f8;
+    border-left: 6px solid gold;
+    font-style: italic;
+    text-align: center;
+    font-size: 20px;
+}
+</style>
+
+
+
+<p>
+We sell original perfumes.<br>
+Affordable prices.<br>
+Fast delivery.<br>
+Customer satisfaction guaranteed.
+</p>
+
+
+<p>Our Mission</p>
+<hr>
+<p>Our Vision</p>
+<hr>
+<p>Our Values</p>
+<hr>
+
+
+<pre>
+Udgoon Collection
+Nairobi, Kenya
+Quality Fragrance Store
+</pre>
+<h3>Our Perfume Collection</h3>
+<ul>
+<li>Lattafa Khamrah</li>
+<li>Yara</li>
+<li>Asad</li>
+<li>Oud Mood</li>
+<li>Mohra Silk Rose</li>
+</ul>
+<h3>How To Order</h3>
+<ol>
+<li>Choose your perfume</li>
+<li>Contact us</li>
+<li>Confirm availability</li>
+<li>Make payment</li>
+<li>Receive delivery</li>
+</ol>
+<h3>Perfume Categories</h3>
+<ul>
+<li>Floral
+    <ul>
+        <li>Rose</li>
+        <li>Jasmine</li>
+        <li>Lily</li>
+    </ul>
+</li>
+<li>Woody
+    <ul>
+        <li>Oud</li>
+        <li>Sandalwood</li>
+        <li>Cedar</li>
+    </ul>
+</li>
+</ul>
+
+
+
+<img src="Images/P1.jpg" alt="perfume bottle">
+
+<img src="Images/P2.jpg" alt="perfume bottle">
+
+
+
+
+<img src="Images/P3.jpg" alt="perfume bottle">
+
+
+<img src="Images/P4.jpg" alt="perfume bottle">
+
+
+
+<img src="Images/P5.jpg" alt="perfume bottle">
+
+
+<img src="Images/P6.jpg" alt="perfume bottle">
+
+
+<img src="Images/P7.jpg" alt="perfume bottle">
+
+
+
+<img src="Images/P8.jpg" alt="perfume bottle">
+
+<h3>Perfume Stock Table</h3>
+
+<table border="1">
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Brand</th>
+<th>Category</th>
+<th>Price (KSh)</th>
+<th>Size</th>
+<th>Stock</th>
+<th>Origin</th>
+<th>Rating</th>
+<th>Year</th>
+</tr>
+
+<tr>
+<td>1</td>
+<td>Khamrah</td>
+<td>Lattafa</td>
+<td>Sweet</td>
+<td>2650</td>
+<td>100ml</td>
+<td>Available</td>
+<td>UAE</td>
+<td>4.5</td>
+<td>2023</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>Yara</td>
+<td>Lattafa</td>
+<td>Floral</td>
+<td>2200</td>
+<td>100ml</td>
+<td>Available</td>
+<td>UAE</td>
+<td>4.2</td>
+<td>2022</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>Asad</td>
+<td>Lattafa</td>
+<td>Woody</td>
+<td>2500</td>
+<td>100ml</td>
+<td>Limited</td>
+<td>UAE</td>
+<td>4.6</td>
+<td>2021</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>Oud Mood</td>
+<td>Lattafa</td>
+<td>Oud</td>
+<td>2300</td>
+<td>100ml</td>
+<td>Available</td>
+<td>UAE</td>
+<td>4.3</td>
+<td>2020</td>
+</tr>
+
+</table>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Perfume Name</th>
+      <th>Price (KES)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Lattafa Khamrah Qahwa</td>
+      <td>KSh 2,650</td>
+    </tr>
+    <tr>
+      <td>Lattafa The Kingdom (Men)</td>
+      <td>KSh 2,800</td>
+    </tr>
+    <tr>
+      <td>Lattafa Mohra Silk Rose</td>
+      <td>KSh 2,200</td>
+    </tr>
+    <tr>
+      <td>Lattafa Atheri</td>
+      <td>KSh 3,000</td>
+    </tr>
+    <tr>
+      <td>Lattafa Confidential Gold</td>
+      <td>KSh 1,500</td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Perfume Name</th>
+      <th>Price (KES)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Lattafa Mashrabya</td>
+      <td>KSh 2,200</td>
+    </tr>
+    <tr>
+      <td>Lattafa Qimmah (Women)</td>
+      <td>KSh 1,600</td>
+    </tr>
+    <tr>
+      <td>Lattafa Mayar</td>
+      <td>KSh 2,100</td>
+    </tr>
+    <tr>
+      <td>Lattafa Bade’e Al Oud</td>
+      <td>KSh 2,200</td>
+    </tr>
+    <tr>
+      <td>Lattafa Hayaati Black</td>
+      <td>KSh 1,400</td>
+    </tr>
+  </tbody>
+</table>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/B2Uqv9TkN3A?si=AAK1ZRUtGS3v4zE9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IVGGI2YFIvc?si=0DidOl0Kp7-bdTRo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VHc7qZr3DUM?si=e0zYZGFrxEGyAsoe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/NlJ4ZvaKdYo?si=uMZxlO3temupi_8A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</body>
+</html>
+
+<footer class="footer">
+  <h2>Contact Us</h2>
+  <p>Email: perfumes@gmail.com</p>
+  <p>Phone: +254 712 345 678</p>
+  <p>Location: Nairobi, Kenya</p>
+</footer>
+
+<footer>
+<p>© 2026 Udgoon Collection </p>
+</footer>
+
+
+
+
+
+
+
+
+
 
