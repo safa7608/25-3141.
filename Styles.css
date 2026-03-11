@@ -1,3 +1,50 @@
-/* External CSS */
-#highlight3 { color: purple; text-decoration:underline; }
-#building3 { font-family: 'Times New Roman'; }
+/* Style for the main title using ID */
+#main-title {
+  color: navy;
+  text-align: center;
+  font-family: 'Arial Black', sans-serif;
+  margin-top: 20px;
+}
+
+/* Style for section titles using class */
+.section-title {
+  color: darkgreen;
+  font-size: 1.8em;
+  margin-left: 10px;
+}
+
+/* Style for subsection titles using class */
+.subsection-title {
+  color: darkred;
+  font-size: 1.5em;
+  margin-left: 20px;
+}
+
+/* Style for detail titles using class */
+.detail-title {
+  color: purple;
+  font-size: 1.2em;
+  margin-left: 30px;
+}
+
+/* Style for all paragraphs using class */
+.paragraph {
+  font-family: Georgia, serif;
+  font-size: 1em;
+  margin: 10px 20px;
+  line-height: 1.5;
+}
+
+/* Highlighted paragraphs */
+.highlight {
+  background-color: lightyellow;
+  border-left: 4px solid orange;
+  padding: 5px;
+}
+
+/* Special styled paragraph */
+.special {
+  color: darkblue;
+  font-weight: bold;
+  font-style: italic;
+}
