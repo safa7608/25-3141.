@@ -1,8 +1,29 @@
+<!DOCTYPE html>
 <html>
-<?php
-echo "First Name:Safa";
-echo "Last Name:Ali";
-echo "Email:safa123@gmail.com";
-echo "Password:Safa789";
-?>
+<head>
+    <title>Simple Form</title>
+</head>
+<body>
+
+<h2>Registration Form</h2>
+
+<form action="process.php" method="POST">
+
+    First Name:<br>
+    <input type="text" name="firstName" required><br><br>
+
+    Last Name:<br>
+    <input type="text" name="lastName" required><br><br>
+
+    Email:<br>
+    <input type="email" name="email" required><br><br>
+
+    Password:<br>
+    <input type="password" name="password" required><br><br>
+
+    <input type="submit" value="Submit">
+
+</form>
+
+</body>
 </html>
