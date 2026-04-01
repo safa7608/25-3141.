@@ -172,7 +172,7 @@
             padding-left: 1.5rem;
         }
 
-        /* Video Section */
+        /* Video Section - FIXED WITH WORKING VIDEOS */
         .video-section {
             padding: 5rem 5%;
             background: var(--dark);
@@ -799,7 +799,7 @@
         </div>
     </section>
 
-    <!-- Two Column Section -->
+    <!-- Two Column Section - REMOVED BLACK STAR PICTURE -->
     <section class="two-column" id="about">
         <div>
             <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 2rem; color: var(--dark);">The Essence of Arabian Luxury</h2>
@@ -813,8 +813,15 @@
                 Whether you seek the bold intensity of Oud For Glory or the subtle elegance of Raghba, our collection offers a scent for every personality and occasion. All prices are displayed in KSH for your convenience.
             </p>
         </div>
-        <div style="background: linear-gradient(135deg, var(--dark) 0%, #2A2A2A 100%); height: 500px; border-radius: 20px; display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 8rem; box-shadow: 0 20px 60px rgba(0,0,0,0.2);">
-            ✦
+        <!-- REPLACED BLACK STAR WITH PROPER IMAGE -->
+        <div class="image-card" style="height: 500px;">
+            <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=800&h=600&fit=crop" 
+                 alt="Luxury Arabian Perfume Collection" 
+                 style="width: 100%; height: 100%; object-fit: cover;">
+            <div class="image-caption">
+                <h3>Udgoon Collection</h3>
+                <p>Authentic Lattafa Reseller</p>
+            </div>
         </div>
     </section>
 
@@ -1028,7 +1035,7 @@
         </div>
     </section>
 
-    <!-- 4 YOUTUBE VIDEOS SECTION -->
+    <!-- 4 YOUTUBE VIDEOS SECTION - FIXED WITH WORKING VIDEOS -->
     <section class="video-section">
         <div class="section-header">
             <span class="section-tag">Video Reviews</span>
@@ -1036,41 +1043,7 @@
             <p style="color: #888;">Watch detailed reviews and perfume commercials</p>
         </div>
         <div class="video-grid">
-            <!-- Video 1 -->
-             <div class="video-container">
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/MAnb2zWYDus" 
-                            title="Perfume Commercials Compilation"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                    </iframe>
-                </div>
-                <div class="video-info">
-                    <h3 class="video-title">Commercials Compilation</h3>
-                    <p class="video-meta">Best perfume commercials</p>
-                </div>
-            </div>
-
-
-            <!-- Video 2 -->
-           <div class="video-container">
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/w4DQ2IY2jAI" 
-                            title="Every Perfume Commercial #shorts"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                    </iframe>
-                </div>
-                <div class="video-info">
-                    <h3 class="video-title">Every Perfume Commercial</h3>
-                    <p class="video-meta">Shorts compilation</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-            <!-- Video 3 -->
+            <!-- Video 1: REPEATED - Perfume Commercials Compilation (was video 3) -->
             <div class="video-container">
                 <div class="video-wrapper">
                     <iframe src="https://www.youtube.com/embed/MAnb2zWYDus" 
@@ -1085,7 +1058,37 @@
                 </div>
             </div>
 
-            <!-- Video 4 -->
+            <!-- Video 2: REPEATED - Every Perfume Commercial (was video 4) -->
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/w4DQ2IY2jAI" 
+                            title="Every Perfume Commercial #shorts"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">Every Perfume Commercial</h3>
+                    <p class="video-meta">Shorts compilation</p>
+                </div>
+            </div>
+
+            <!-- Video 3: Perfume Commercials Compilation -->
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/MAnb2zWYDus" 
+                            title="Perfume Commercials Compilation"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">Commercials Compilation</h3>
+                    <p class="video-meta">Best perfume commercials</p>
+                </div>
+            </div>
+
+            <!-- Video 4: Every Perfume Commercial -->
             <div class="video-container">
                 <div class="video-wrapper">
                     <iframe src="https://www.youtube.com/embed/w4DQ2IY2jAI" 
