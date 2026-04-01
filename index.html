@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Udgoon Collection | Premium Lattafa Perfumes</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -22,11 +22,6 @@
             --cream-dark: #F0EBE0;
             --text: #2C2C2C;
             --text-light: #666;
-            --accent: #8B4513;
-            --gradient-1: linear-gradient(135deg, #1A1A1A 0%, #2D2D2D 100%);
-            --gradient-2: linear-gradient(135deg, #D4AF37 0%, #B8941F 100%);
-            --shadow-soft: 0 10px 40px rgba(0,0,0,0.1);
-            --shadow-gold: 0 10px 40px rgba(212, 175, 55, 0.2);
         }
 
         body {
@@ -34,19 +29,6 @@
             background: var(--cream);
             color: var(--text);
             line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--cream);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: var(--gold);
-            border-radius: 5px;
         }
 
         /* Navigation */
@@ -62,29 +44,15 @@
             justify-content: space-between;
             align-items: center;
             border-bottom: 2px solid var(--gold);
-            box-shadow: 0 5px 30px rgba(0,0,0,0.3);
         }
 
         .logo {
             font-family: 'Playfair Display', serif;
             font-size: 2rem;
-            background: var(--gradient-2);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--gold);
             text-decoration: none;
             font-weight: 700;
             letter-spacing: 3px;
-            position: relative;
-        }
-
-        .logo::after {
-            content: '✦';
-            position: absolute;
-            right: -25px;
-            top: -5px;
-            font-size: 0.8rem;
-            color: var(--gold);
-            -webkit-text-fill-color: var(--gold);
         }
 
         .nav-menu {
@@ -100,169 +68,88 @@
             font-weight: 500;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            position: relative;
-            padding: 0.5rem 0;
-            transition: all 0.3s;
-        }
-
-        .nav-menu a::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gold);
-            transition: width 0.3s;
+            transition: color 0.3s;
         }
 
         .nav-menu a:hover {
             color: var(--gold);
         }
 
-        .nav-menu a:hover::before {
-            width: 100%;
-        }
-
         .nav-icons {
             display: flex;
             gap: 1.5rem;
-            align-items: center;
-        }
-
-        .icon-btn {
-            background: none;
-            border: none;
             color: var(--gold);
-            font-size: 1.3rem;
-            cursor: pointer;
-            position: relative;
-            transition: transform 0.3s;
-        }
-
-        .icon-btn:hover {
-            transform: scale(1.1);
-        }
-
-        .badge {
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            background: var(--gold);
-            color: var(--dark);
-            font-size: 0.7rem;
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-        }
-
-        /* Page Container */
-        .page {
-            display: none;
-            min-height: 100vh;
-            padding-top: 80px;
-        }
-
-        .page.active {
-            display: block;
-            animation: fadeIn 0.5s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         /* Hero Section */
         .hero {
-            height: calc(100vh - 80px);
-            background: var(--gradient-1);
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
-            animation: pulse 4s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 0.5; }
-            50% { transform: scale(1.1); opacity: 0.8; }
-        }
-
-        .hero-content {
             text-align: center;
-            z-index: 2;
-            max-width: 900px;
-            padding: 0 2rem;
+            padding: 120px 2rem 4rem;
+            position: relative;
         }
 
-        .hero-subtitle {
-            color: var(--gold);
-            font-size: 1rem;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-        }
-
-        .hero-title {
+        .hero-content h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 4.5rem;
+            font-size: 4rem;
             color: #fff;
             margin-bottom: 1.5rem;
-            line-height: 1.1;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
-        .hero-title span {
+        .hero-content h1 span {
             color: var(--gold);
             font-style: italic;
-            position: relative;
         }
 
-        .hero-desc {
+        .hero-content p {
             color: #ccc;
             font-size: 1.2rem;
-            line-height: 1.8;
-            margin-bottom: 3rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            max-width: 600px;
+            margin: 0 auto 2rem;
         }
 
         .cta-button {
             display: inline-block;
             padding: 1.2rem 3rem;
-            background: var(--gradient-2);
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
             color: var(--dark);
             text-decoration: none;
             font-weight: 700;
             letter-spacing: 2px;
             border-radius: 50px;
-            transition: all 0.3s;
-            box-shadow: var(--shadow-gold);
-            text-transform: uppercase;
-            font-size: 0.9rem;
+            transition: transform 0.3s;
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 0 2rem;
+        }
+
+        .section-tag {
+            color: var(--gold);
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
         }
 
         /* Two Column Layout */
@@ -276,102 +163,89 @@
             align-items: center;
         }
 
-        .column-content h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: var(--dark);
-            margin-bottom: 1.5rem;
-            position: relative;
-            padding-bottom: 1rem;
-        }
-
-        .column-content h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background: var(--gold);
-        }
-
         .formatted-paragraph {
-            margin-bottom: 1.5rem;
             text-align: justify;
-            line-height: 1.8;
-            color: var(--text);
-            font-size: 1.05rem;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
             text-indent: 2rem;
             border-left: 3px solid var(--gold-light);
             padding-left: 1.5rem;
-            margin-left: -1.5rem;
         }
 
-        .column-visual {
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: var(--shadow-soft);
+        /* Video Section */
+        .video-section {
+            padding: 5rem 5%;
+            background: var(--dark);
         }
 
-        .image-container {
-            position: relative;
-            overflow: hidden;
-            border-radius: 20px;
-            background: var(--gradient-1);
-            min-height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .image-container:hover img {
-            transform: scale(1.05);
-        }
-
-        .image-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-            padding: 2rem;
+        .video-section .section-title {
             color: #fff;
         }
 
-        /* Gallery Grid - 6 Images */
+        .video-section .section-tag {
+            color: var(--gold);
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .video-container {
+            position: relative;
+            background: #2A2A2A;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 2px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.4s;
+        }
+
+        .video-container:hover {
+            border-color: var(--gold);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.2);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-info {
+            padding: 1.5rem;
+            color: #fff;
+        }
+
+        .video-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--gold);
+        }
+
+        .video-meta {
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        /* Image Gallery with SRC */
         .gallery-section {
             padding: 5rem 5%;
-            background: linear-gradient(to bottom, var(--cream) 0%, var(--cream-dark) 100%);
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-tag {
-            color: var(--gold);
-            font-size: 0.9rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-            display: block;
-            font-weight: 600;
-        }
-
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            color: var(--dark);
-            margin-bottom: 1rem;
+            background: var(--cream-dark);
         }
 
         .image-grid {
@@ -386,27 +260,21 @@
             position: relative;
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: var(--shadow-soft);
-            transition: all 0.4s;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
             aspect-ratio: 4/3;
             background: var(--dark);
-        }
-
-        .image-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-gold);
         }
 
         .image-card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 0.9;
-            transition: opacity 0.3s;
+            transition: transform 0.5s;
+            display: block;
         }
 
         .image-card:hover img {
-            opacity: 1;
+            transform: scale(1.1);
         }
 
         .image-caption {
@@ -414,10 +282,9 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: rgba(26, 26, 26, 0.95);
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
             color: var(--gold);
-            padding: 1rem;
-            font-weight: 600;
+            padding: 1.5rem;
             transform: translateY(100%);
             transition: transform 0.3s;
         }
@@ -426,98 +293,15 @@
             transform: translateY(0);
         }
 
-        /* Video Section - 4 Videos */
-        .video-section {
-            padding: 5rem 5%;
-            background: var(--dark);
-            position: relative;
-        }
-
-        .video-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23D4AF37" fill-opacity="0.05"><path d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/></g></g></svg>');
-            opacity: 0.5;
-        }
-
-        .video-section .section-title {
-            color: #fff;
-        }
-
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        .video-container {
-            position: relative;
-            background: linear-gradient(135deg, #2A2A2A 0%, #1A1A1A 100%);
-            border-radius: 20px;
-            overflow: hidden;
-            border: 2px solid rgba(212, 175, 55, 0.2);
-            transition: all 0.4s;
-            aspect-ratio: 16/9;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .video-container:hover {
-            border-color: var(--gold);
-            transform: scale(1.02);
-            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.2);
-        }
-
-        .video-placeholder {
-            text-align: center;
-            color: var(--gold);
-            padding: 2rem;
-        }
-
-        .play-button {
-            width: 80px;
-            height: 80px;
-            background: var(--gradient-2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
-        }
-
-        .play-button:hover {
-            transform: scale(1.1);
-            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.5);
-        }
-
-        .play-button::after {
-            content: '▶';
-            color: var(--dark);
-            font-size: 1.5rem;
-            margin-left: 5px;
-        }
-
-        .video-title {
-            color: #fff;
+        .image-caption h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+            margin-bottom: 0.3rem;
+            color: var(--gold);
         }
 
-        .video-desc {
-            color: #888;
+        .image-caption p {
+            color: #ccc;
             font-size: 0.9rem;
         }
 
@@ -527,7 +311,7 @@
             background: var(--cream);
         }
 
-        .tables-container {
+        .tables-wrapper {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
@@ -535,92 +319,190 @@
             margin: 0 auto;
         }
 
-        .table-wrapper {
+        .table-container {
             background: #fff;
             border-radius: 20px;
-            padding: 2rem;
-            box-shadow: var(--shadow-soft);
             overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
         }
 
         .table-title {
             font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
-            color: var(--dark);
-            margin-bottom: 1.5rem;
             text-align: center;
-            position: relative;
-            padding-bottom: 1rem;
-        }
-
-        .table-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 40px;
-            height: 2px;
-            background: var(--gold);
+            padding: 1.5rem;
+            background: linear-gradient(135deg, var(--dark) 0%, #2A2A2A 100%);
+            color: var(--gold);
+            margin: 0;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 0.95rem;
         }
 
         th {
-            background: var(--gradient-1);
+            background: var(--dark);
             color: var(--gold);
             padding: 1rem;
             text-align: left;
-            font-weight: 600;
+            font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            font-size: 0.85rem;
         }
 
         td {
             padding: 1rem;
             border-bottom: 1px solid #eee;
-            color: var(--text);
         }
 
         tr:hover {
             background: var(--cream);
         }
 
-        tr:nth-child(even) {
-            background: #fafafa;
-        }
-
-        tr:nth-child(even):hover {
-            background: var(--cream-dark);
-        }
-
-        .price-tag {
+        /* KSH Price Styling */
+        .price {
             color: var(--gold-dark);
             font-weight: 700;
             font-size: 1.1rem;
+            font-family: 'Inter', sans-serif;
         }
 
-        .status {
+        .price::before {
+            content: 'KSh ';
+            font-weight: 600;
+        }
+
+        .price-original {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 0.9rem;
+            margin-left: 0.5rem;
+        }
+
+        .price-original::before {
+            content: 'KSh ';
+        }
+
+        .badge {
             padding: 0.3rem 0.8rem;
             border-radius: 20px;
             font-size: 0.8rem;
             font-weight: 600;
-            display: inline-block;
         }
 
-        .status.in-stock {
+        .badge.in-stock {
             background: #d4edda;
             color: #155724;
         }
 
-        .status.low-stock {
+        .badge.low-stock {
             background: #fff3cd;
             color: #856404;
+        }
+
+        /* Product Cards with Images */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .product-image {
+            height: 300px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: var(--gold);
+            color: var(--dark);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            z-index: 2;
+        }
+
+        .product-info {
+            padding: 1.5rem;
+        }
+
+        .product-brand {
+            color: var(--gold);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .product-notes {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+
+        .add-to-cart {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--dark);
+            color: var(--gold);
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .add-to-cart:hover {
+            background: var(--gold);
+            color: var(--dark);
+            transform: scale(1.1);
         }
 
         /* Nested List Section */
@@ -629,14 +511,13 @@
             background: linear-gradient(135deg, var(--cream-dark) 0%, var(--cream) 100%);
         }
 
-        .list-container {
-            max-width: 1000px;
+        .guide-container {
+            max-width: 900px;
             margin: 0 auto;
             background: #fff;
             padding: 3rem;
             border-radius: 20px;
-            box-shadow: var(--shadow-soft);
-            border: 1px solid rgba(212, 175, 55, 0.1);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
         }
 
         .nested-list {
@@ -646,9 +527,11 @@
 
         .nested-list > li {
             counter-increment: item;
-            margin-bottom: 1.5rem;
             position: relative;
             padding-left: 3rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--cream-dark);
         }
 
         .nested-list > li::before {
@@ -658,27 +541,26 @@
             top: 0;
             width: 35px;
             height: 35px;
-            background: var(--gradient-2);
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
             color: var(--dark);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            font-size: 0.9rem;
         }
 
-        .nested-list > li > strong {
+        .nested-list > li strong {
             display: block;
-            color: var(--dark);
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
             font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
         }
 
         .sub-list {
             list-style: none;
-            margin-top: 0.8rem;
+            margin-top: 1rem;
             margin-left: 1rem;
         }
 
@@ -699,40 +581,31 @@
             font-size: 0.6rem;
         }
 
-        /* Special Feature: Scent Finder Widget */
-        .special-feature {
+        /* Special Feature: Scent Finder */
+        .scent-finder {
             padding: 5rem 5%;
-            background: var(--dark);
-            position: relative;
-            overflow: hidden;
+            background: linear-gradient(135deg, var(--dark) 0%, var(--darker) 100%);
+            text-align: center;
         }
 
-        .scent-finder {
+        .finder-container {
             max-width: 800px;
             margin: 0 auto;
-            background: rgba(255,255,255,0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: 30px;
-            padding: 3rem;
-            text-align: center;
-            position: relative;
-            z-index: 1;
         }
 
-        .scent-finder h3 {
+        .finder-container h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 2rem;
+            font-size: 2.5rem;
             color: var(--gold);
             margin-bottom: 1rem;
         }
 
-        .scent-finder p {
+        .finder-container > p {
             color: #aaa;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
         }
 
-        .scent-options {
+        .finder-options {
             display: flex;
             gap: 1rem;
             justify-content: center;
@@ -740,23 +613,21 @@
             margin-bottom: 2rem;
         }
 
-        .scent-btn {
+        .finder-btn {
             padding: 1rem 2rem;
             background: transparent;
             border: 2px solid var(--gold);
             color: var(--gold);
             border-radius: 50px;
             cursor: pointer;
-            transition: all 0.3s;
             font-weight: 600;
-            letter-spacing: 1px;
+            transition: all 0.3s;
         }
 
-        .scent-btn:hover, .scent-btn.active {
+        .finder-btn:hover, .finder-btn.active {
             background: var(--gold);
             color: var(--dark);
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
         }
 
         .recommendation {
@@ -800,14 +671,12 @@
             font-size: 2rem;
             color: var(--gold);
             margin-bottom: 1rem;
-            letter-spacing: 2px;
         }
 
         .footer-brand p {
             color: #888;
             line-height: 1.8;
             margin-bottom: 2rem;
-            font-size: 0.95rem;
         }
 
         .social-links {
@@ -820,40 +689,27 @@
             height: 45px;
             border-radius: 50%;
             background: rgba(212, 175, 55, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.3);
             color: var(--gold);
             display: flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
             transition: all 0.3s;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            font-weight: 600;
         }
 
         .social-links a:hover {
             background: var(--gold);
             color: var(--dark);
-            transform: translateY(-3px) rotate(360deg);
+            transform: translateY(-3px);
         }
 
         .footer-column h4 {
             color: var(--gold);
             margin-bottom: 1.5rem;
             font-size: 1.1rem;
-            letter-spacing: 2px;
             text-transform: uppercase;
-            position: relative;
-            padding-bottom: 0.5rem;
-        }
-
-        .footer-column h4::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 30px;
-            height: 2px;
-            background: var(--gold);
+            letter-spacing: 2px;
         }
 
         .footer-column ul {
@@ -867,13 +723,11 @@
         .footer-column a {
             color: #888;
             text-decoration: none;
-            transition: all 0.3s;
-            display: inline-block;
+            transition: color 0.3s;
         }
 
         .footer-column a:hover {
             color: var(--gold);
-            transform: translateX(5px);
         }
 
         .footer-bottom {
@@ -881,24 +735,12 @@
             padding-top: 3rem;
             border-top: 1px solid rgba(212, 175, 55, 0.1);
             color: #555;
-            font-size: 0.9rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .payment-methods {
-            display: flex;
-            gap: 1rem;
-            font-size: 1.5rem;
         }
 
         /* Responsive */
         @media (max-width: 1024px) {
             .two-column,
-            .tables-container {
+            .tables-wrapper {
                 grid-template-columns: 1fr;
             }
             .image-grid {
@@ -916,7 +758,7 @@
             .nav-menu {
                 display: none;
             }
-            .hero-title {
+            .hero-content h1 {
                 font-size: 2.5rem;
             }
             .image-grid {
@@ -925,91 +767,6 @@
             .footer-content {
                 grid-template-columns: 1fr;
             }
-            .footer-bottom {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
-
-        /* Utility Classes */
-        .text-center { text-align: center; }
-        .mt-2 { margin-top: 2rem; }
-        .gold-text { color: var(--gold); }
-        
-        /* Page Specific Styles */
-        .page-header {
-            background: var(--gradient-1);
-            padding: 6rem 5% 4rem;
-            text-align: center;
-            color: #fff;
-        }
-        
-        .page-header h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .page-header p {
-            color: #aaa;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Contact Form */
-        .contact-form {
-            max-width: 600px;
-            margin: 3rem auto;
-            background: #fff;
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: var(--shadow-soft);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--dark);
-            font-weight: 600;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid #eee;
-            border-radius: 10px;
-            font-family: inherit;
-            transition: all 0.3s;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--gold);
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 1rem;
-            background: var(--gradient-2);
-            border: none;
-            border-radius: 50px;
-            color: var(--dark);
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-gold);
         }
     </style>
 </head>
@@ -1017,502 +774,526 @@
 
     <!-- Navigation -->
     <nav>
-        <a href="#" class="logo" onclick="showPage('home')">UDGOON</a>
+        <a href="#" class="logo">UDGOON</a>
         <ul class="nav-menu">
-            <li><a href="#" onclick="showPage('home')">Home</a></li>
-            <li><a href="#" onclick="showPage('collection')">Collection</a></li>
-            <li><a href="#" onclick="showPage('about')">About</a></li>
-            <li><a href="#" onclick="showPage('fragrance-guide')">Fragrance Guide</a></li>
-            <li><a href="#" onclick="showPage('contact')">Contact</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#collection">Collection</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#guide">Fragrance Guide</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="nav-icons">
-            <button class="icon-btn" title="Search">🔍</button>
-            <button class="icon-btn" title="Account">👤</button>
-            <button class="icon-btn" title="Cart">
-                🛒
-                <span class="badge">3</span>
-            </button>
+            <span>🔍</span>
+            <span>👤</span>
+            <span>🛒</span>
         </div>
     </nav>
 
-    <!-- PAGE 1: HOME -->
-    <div id="home" class="page active">
-        <!-- Hero -->
-        <section class="hero">
-            <div class="hero-content">
-                <p class="hero-subtitle">✦ Authentic Lattafa Reseller ✦</p>
-                <h1 class="hero-title">Discover the Art of <span>Oriental</span> Fragrance</h1>
-                <p class="hero-desc">Udgoon Collection brings you the finest Lattafa perfumes, crafted with precious ingredients and traditional Arabian perfumery expertise. Experience luxury that lingers.</p>
-                <a href="#" class="cta-button" onclick="showPage('collection')">Explore Collection</a>
-            </div>
-        </section>
-
-        <!-- Two Column Section 1 -->
-        <section class="two-column">
-            <div class="column-content">
-                <h2>The Essence of Arabian Luxury</h2>
-                <p class="formatted-paragraph">
-                    Lattafa Perfumes represents the pinnacle of Middle Eastern fragrance craftsmanship, blending centuries-old traditions with contemporary sophistication. Each bottle encapsulates the rich heritage of Arabian perfumery, where precious oud, exotic spices, and rare florals converge to create scents that transcend ordinary fragrance experiences.
-                </p>
-                <p class="formatted-paragraph">
-                    At Udgoon Collection, we curate only the most exceptional Lattafa creations, ensuring that every fragrance meets our stringent standards of authenticity and excellence. Our direct partnerships with Lattafa guarantee that you receive genuine products, never compromised by dilution or counterfeiting.
-                </p>
-                <p class="formatted-paragraph">
-                    Whether you seek the bold intensity of Oud For Glory or the subtle elegance of Raghba, our collection offers a scent for every personality and occasion. Discover fragrances that don't just smell divine—they tell stories, evoke memories, and leave lasting impressions.
-                </p>
-            </div>
-            <div class="column-visual">
-                <div class="image-container">
-                    <div style="color: var(--gold); font-size: 8rem; opacity: 0.3;">🜲</div>
-                    <div class="image-overlay">
-                        <h3>Premium Selection</h3>
-                        <p>Curated by experts</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Two Column Section 2 (Reversed) -->
-        <section class="two-column" style="direction: rtl;">
-            <div class="column-content" style="direction: ltr;">
-                <h2>Why Choose Udgoon?</h2>
-                <p class="formatted-paragraph">
-                    Our commitment to authenticity sets us apart in the fragrance industry. Every perfume in our collection undergoes rigorous verification processes, ensuring that you receive only genuine Lattafa products. We understand that fragrance is personal—a signature that defines your presence—and we honor that intimacy with uncompromising quality.
-                </p>
-                <p class="formatted-paragraph">
-                    Beyond authenticity, we offer an immersive shopping experience guided by fragrance experts who understand the nuances of notes, accords, and silage. Whether you're a seasoned collector or new to Arabian perfumes, our team provides personalized recommendations tailored to your preferences.
-                </p>
-                <p class="formatted-paragraph">
-                    With worldwide shipping, secure packaging, and dedicated customer support, Udgoon Collection transforms online perfume shopping into a luxury experience. Join thousands of satisfied customers who have discovered their signature scents through our curated platform.
-                </p>
-            </div>
-            <div class="column-visual" style="direction: ltr;">
-                <div class="image-container" style="background: linear-gradient(135deg, #2A2A2A 0%, #1A1A1A 100%);">
-                    <div style="color: var(--gold); font-size: 8rem; opacity: 0.3;">◈</div>
-                    <div class="image-overlay">
-                        <h3>Trusted Worldwide</h3>
-                        <p>50,000+ happy customers</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 6 Images Gallery -->
-        <section class="gallery-section">
-            <div class="section-header">
-                <span class="section-tag">Visual Journey</span>
-                <h2 class="section-title">The Collection</h2>
-                <p class="section-desc">Explore our curated selection through imagery</p>
-            </div>
-            <div class="image-grid">
-                <div class="image-card">
-                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #3A2A1A 0%, #1A1A1A 100%); display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 4rem;">🜲</div>
-                    <div class="image-caption">Oud For Glory</div>
-                </div>
-                <div class="image-card">
-                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #2A1A2A 0%, #1A1A1A 100%); display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 4rem;">✦</div>
-                    <div class="image-caption">Fakhar Black</div>
-                </div>
-                <div class="image-card">
-                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #1A2A2A 0%, #1A1A1A 100%); display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 4rem;">◈</div>
-                    <div class="image-caption">Asad</div>
-                </div>
-                <div class="image-card">
-                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #2A2A1A 0%, #1A1A1A 100%); display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 4rem;">⬟</div>
-                    <div class="image-caption">Khamrah</div>
-                </div>
-                <div class="image-card">
-                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #1A1A2A 0%, #1A1A1A 100%); display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 4rem;">⬢</div>
-                    <div class="image-caption">Raghba</div>
-                </div>
-                <div class="image-card">
-                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #2A1A1A 0%, #1A1A1A 100%); display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 4rem;">◉</div>
-                    <div class="image-caption">Ejaazi</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Special Feature: Scent Finder -->
-        <section class="special-feature">
-            <div class="scent-finder">
-                <h3>✦ Find Your Signature Scent ✦</h3>
-                <p>Select your preferred fragrance family and discover your perfect match</p>
-                <div class="scent-options">
-                    <button class="scent-btn" onclick="showRecommendation('oud')">Oud & Woody</button>
-                    <button class="scent-btn" onclick="showRecommendation('spicy')">Oriental Spicy</button>
-                    <button class="scent-btn" onclick="showRecommendation('sweet')">Sweet Gourmand</button>
-                    <button class="scent-btn" onclick="showRecommendation('fresh')">Fresh Citrus</button>
-                </div>
-                <div id="recommendation" class="recommendation">
-                    <h4 style="color: var(--gold); margin-bottom: 1rem; font-family: 'Playfair Display', serif;">Recommended: <span id="rec-title"></span></h4>
-                    <p id="rec-desc" style="color: #ccc;"></p>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- PAGE 2: COLLECTION -->
-    <div id="collection" class="page">
-        <div class="page-header">
-            <h1>Our Collection</h1>
-            <p>Discover our handpicked selection of Lattafa's finest fragrances, each telling a unique olfactory story.</p>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <p class="section-tag" style="color: var(--gold); margin-bottom: 2rem;">Authentic Lattafa Reseller</p>
+            <h1>Discover the Art of <span>Oriental</span> Fragrance</h1>
+            <p>Udgoon Collection brings you the finest Lattafa perfumes, crafted with precious ingredients and traditional Arabian perfumery expertise. Now available in Kenya with prices in KSH.</p>
+            <a href="#collection" class="cta-button">Explore Collection</a>
         </div>
+    </section>
 
-        <!-- 4 Videos Section -->
-        <section class="video-section">
-            <div class="section-header">
-                <span class="section-tag">Video Reviews</span>
-                <h2 class="section-title">Fragrance Insights</h2>
-            </div>
-            <div class="video-grid">
-                <div class="video-container">
-                    <div class="video-placeholder">
-                        <div class="play-button"></div>
-                        <div class="video-title">Oud For Glory Review</div>
-                        <div class="video-desc">Duration: 4:32 • 12K views</div>
-                    </div>
-                </div>
-                <div class="video-container">
-                    <div class="video-placeholder">
-                        <div class="play-button"></div>
-                        <div class="video-title">Khamrah Unboxing</div>
-                        <div class="video-desc">Duration: 3:15 • 8.5K views</div>
-                    </div>
-                </div>
-                <div class="video-container">
-                    <div class="video-placeholder">
-                        <div class="play-button"></div>
-                        <div class="video-title">Asad First Impressions</div>
-                        <div class="video-desc">Duration: 5:20 • 15K views</div>
-                    </div>
-                </div>
-                <div class="video-container">
-                    <div class="video-placeholder">
-                        <div class="play-button"></div>
-                        <div class="video-title">Top 5 Lattafa Fragrances</div>
-                        <div class="video-desc">Duration: 8:45 • 45K views</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Two Tables -->
-        <section class="tables-section">
-            <div class="section-header">
-                <span class="section-tag">Detailed Information</span>
-                <h2 class="section-title">Product Catalog</h2>
-            </div>
-            <div class="tables-container">
-                <div class="table-wrapper">
-                    <h3 class="table-title">Men's Collection</h3>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Fragrance</th>
-                                <th>Size</th>
-                                <th>Price</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Oud For Glory</strong></td>
-                                <td>100ml EDP</td>
-                                <td class="price-tag">$45.00</td>
-                                <td><span class="status in-stock">In Stock</span></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Asad</strong></td>
-                                <td>100ml EDP</td>
-                                <td class="price-tag">$42.00</td>
-                                <td><span class="status in-stock">In Stock</span></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Fakhar Black</strong></td>
-                                <td>100ml EDP</td>
-                                <td class="price-tag">$38.00</td>
-                                <td><span class="status low-stock">Low Stock</span></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Ejaazi</strong></td>
-                                <td>100ml EDP</td>
-                                <td class="price-tag">$40.00</td>
-                                <td><span class="status in-stock">In Stock</span></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Maahir</strong></td>
-                                <td>100ml EDP</td>
-                                <td class="price-tag">$44.00</td>
-                                <td><span class="status in-stock">In Stock</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="table-wrapper">
-                    <h3 class="table-title">Unisex & Women's</h3>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Fragrance</th>
-                                <th>Size</th>
-                                <th>Price</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Khamrah</strong></td>
-                                <td>100ml EDP</td>
-                                <td class="price-tag">$48.00</td>
-                                <td><span class="status in-stock">In Stock</span></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Raghba</strong></td>
-                                <td>100ml EDP</td>
-                                <td class="price-tag">$35.00</td>
-                                <td><span class="status in-stock">In Stock</span></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Ana Abiyedh</strong></td>
-                                <td>60ml EDP</td>
-                                <td class="price-tag">$32.00</td>
-                                <td><span class="status low-stock">Low Stock</span></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Yara</strong></td>
-                                <td>100ml EDP</td>
-                                <td class="price-tag">$36.00</td>
-                                <td><span class="status in-stock">In Stock</span></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Mayar</strong></td>
-                                <td>100ml EDP</td>
-                                <td class="price-tag">$38.00</td>
-                                <td><span class="status in-stock">In Stock</span></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- PAGE 3: ABOUT -->
-    <div id="about" class="page">
-        <div class="page-header">
-            <h1>Our Story</h1>
-            <p>From passion to profession: the journey of Udgoon Collection</p>
+    <!-- Two Column Section -->
+    <section class="two-column" id="about">
+        <div>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 2rem; color: var(--dark);">The Essence of Arabian Luxury</h2>
+            <p class="formatted-paragraph">
+                Lattafa Perfumes represents the pinnacle of Middle Eastern fragrance craftsmanship, blending centuries-old traditions with contemporary sophistication. Each bottle encapsulates the rich heritage of Arabian perfumery.
+            </p>
+            <p class="formatted-paragraph">
+                At Udgoon Collection, we curate only the most exceptional Lattafa creations, ensuring that every fragrance meets our stringent standards of authenticity and excellence. We now offer convenient local pricing in Kenyan Shillings (KSH) for our East African customers.
+            </p>
+            <p class="formatted-paragraph">
+                Whether you seek the bold intensity of Oud For Glory or the subtle elegance of Raghba, our collection offers a scent for every personality and occasion. All prices are displayed in KSH for your convenience.
+            </p>
         </div>
-
-        <section class="two-column" style="padding-top: 4rem;">
-            <div class="column-content">
-                <h2>Our Heritage</h2>
-                <p class="formatted-paragraph">
-                    Founded in 2020, Udgoon Collection emerged from a profound appreciation for Arabian perfumery and a desire to share these olfactory treasures with the world. The name "Udgoon" draws from Somali and Arabic roots, evoking the essence of fragrance and the art of scent—paying homage to the rich cultural heritage that inspires our curation.
-                </p>
-                <p class="formatted-paragraph">
-                    Our founder's journey began in the bustling perfume souks of Dubai, where the intoxicating blend of oud, amber, and rose sparked an enduring passion. What started as a personal collection soon evolved into a mission: to bridge the gap between traditional Arabian perfumery and contemporary fragrance enthusiasts seeking authenticity and quality.
-                </p>
-                <p class="formatted-paragraph">
-                    Today, Udgoon Collection stands as a trusted authority in Lattafa perfumes, serving customers across six continents. We maintain direct relationships with Lattafa's master perfumers, ensuring that every bottle we sell represents the brand's commitment to excellence and innovation in fragrance creation.
-                </p>
-            </div>
-            <div class="column-visual">
-                <div class="image-container" style="min-height: 500px;">
-                    <div style="color: var(--gold); font-size: 10rem; opacity: 0.2;">❋</div>
-                    <div class="image-overlay">
-                        <h3>Since 2020</h3>
-                        <p>Dedicated to authenticity</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="two-column" style="direction: rtl; background: var(--cream-dark);">
-            <div class="column-content" style="direction: ltr;">
-                <h2>Our Philosophy</h2>
-                <p class="formatted-paragraph">
-                    We believe that fragrance is more than a cosmetic accessory—it is an expression of identity, a trigger for memory, and a form of art that transcends language and culture. This philosophy guides every aspect of our business, from the careful selection of products to the educational content we provide our community.
-                </p>
-                <p class="formatted-paragraph">
-                    Sustainability and ethical sourcing are integral to our operations. We work exclusively with suppliers who share our commitment to responsible practices, ensuring that the precious ingredients in your perfume—whether sustainable oud or ethically harvested roses—contribute positively to both communities and ecosystems.
-                </p>
-                <p class="formatted-paragraph">
-                    Education forms the cornerstone of our customer relationships. We don't just sell perfumes; we guide you through the intricate world of fragrance notes, accords, and families. Our detailed product descriptions, video reviews, and personalized consultation services ensure that you make informed choices that resonate with your unique preferences.
-                </p>
-            </div>
-            <div class="column-visual" style="direction: ltr;">
-                <div class="image-container" style="background: linear-gradient(135deg, #1A1A2A 0%, #0F0F1A 100%); min-height: 500px;">
-                    <div style="color: var(--gold); font-size: 10rem; opacity: 0.2;">✦</div>
-                    <div class="image-overlay">
-                        <h3>Values First</h3>
-                        <p>Ethics & Excellence</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- PAGE 4: FRAGRANCE GUIDE -->
-    <div id="fragrance-guide" class="page">
-        <div class="page-header">
-            <h1>Fragrance Guide</h1>
-            <p>Master the art of perfume with our comprehensive guide</p>
+        <div style="background: linear-gradient(135deg, var(--dark) 0%, #2A2A2A 100%); height: 500px; border-radius: 20px; display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 8rem; box-shadow: 0 20px 60px rgba(0,0,0,0.2);">
+            ✦
         </div>
+    </section>
 
-        <!-- Nested List Section -->
-        <section class="list-section">
-            <div class="section-header">
-                <span class="section-tag">Education</span>
-                <h2 class="section-title">Understanding Fragrance</h2>
+    <!-- 6 IMAGES WITH SRC - GALLERY SECTION -->
+    <section class="gallery-section" id="collection">
+        <div class="section-header">
+            <span class="section-tag">Visual Journey</span>
+            <h2 class="section-title">The Collection</h2>
+            <p style="color: var(--text-light);">Explore our curated selection</p>
+        </div>
+        <div class="image-grid">
+            <!-- Image 1: Oud For Glory -->
+            <div class="image-card">
+                <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=800&h=600&fit=crop" 
+                     alt="Oud For Glory - Luxury Arabian Perfume with Oud and Spicy Notes" 
+                     loading="lazy">
+                <div class="image-caption">
+                    <h3>Oud For Glory</h3>
+                    <p>Bold & Commanding</p>
+                </div>
             </div>
-            <div class="list-container">
-                <ol class="nested-list">
-                    <li>
-                        <strong>The Fragrance Pyramid</strong>
-                        Understanding how perfumes evolve over time is essential for appreciation. Fragrances unfold in three distinct stages, each revealing different characteristics.
-                        <ul class="sub-list">
-                            <li>Top Notes: The initial impression lasting 15 minutes to 2 hours</li>
-                            <li>Heart Notes: The core personality emerging after 2-6 hours</li>
-                            <li>Base Notes: The foundation lingering 6+ hours</li>
-                            <li>Arabian perfumes often emphasize base notes for longevity</li>
-                            <li>Lattafa specializes in complex base note compositions</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>Concentration Levels</strong>
-                        The intensity and longevity of a fragrance depend on its concentration of perfume oils. Different concentrations suit different occasions and preferences.
-                        <ul class="sub-list">
-                            <li>Parfum (Extrait): 20-30% concentration, 8-24 hours longevity</li>
-                            <li>Eau de Parfum (EDP): 15-20% concentration, 4-8 hours longevity</li>
-                            <li>Eau de Toilette (EDT): 5-15% concentration, 2-4 hours longevity</li>
-                            <li>Eau de Cologne: 2-4% concentration, 2-3 hours longevity</li>
-                            <li>Lattafa primarily produces EDP for optimal value and performance</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>Fragrance Families</strong>
-                        Perfumes are categorized into families based on their dominant characteristics. Understanding these helps identify your preferences.
-                        <ul class="sub-list">
-                            <li>Oriental: Warm, spicy, amber-rich with exotic resins</li>
-                            <li>Woody: Centered on sandalwood, cedar, and oud</li>
-                            <li>Floral: Featuring rose, jasmine, and orange blossom</li>
-                            <li>Fresh: Citrus, aquatic, and green notes</li>
-                            <li>Gourmand: Edible scents like vanilla, caramel, and spices</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>Application Techniques</strong>
-                        Proper application enhances fragrance performance and longevity. Heat and pulse points are key to projection.
-                        <ul class="sub-list">
-                            <li>Apply to pulse points: wrists, neck, behind ears</li>
-                            <li>Don't rub wrists together—it breaks molecular structure</li>
-                            <li>Spray on clothing for extended longevity</li>
-                            <li>Moisturized skin holds fragrance longer</li>
-                            <li>Layer with matching body products for intensity</li>
-                        </ul>
-                    </li>
-                    <li>
-                        <strong>Storage and Preservation</strong>
-                        Protecting your investment requires proper storage. Light, heat, and air are perfume's enemies.
-                        <ul class="sub-list">
-                            <li>Store in cool, dark places away from sunlight</li>
-                            <li>Keep bottles in original boxes for extra protection</li>
-                            <li>Avoid bathroom storage due to humidity fluctuations</li>
-                            <li>Ensure caps are tightly sealed to prevent oxidation</li>
-                            <li>Most perfumes last 3-5 years when stored properly</li>
-                        </ul>
-                    </li>
-                </ol>
-            </div>
-        </section>
 
-        <!-- Additional Content -->
-        <section class="two-column" style="padding-top: 2rem;">
-            <div class="column-content">
-                <h2>Why Arabian Perfumes?</h2>
-                <p class="formatted-paragraph">
-                    Arabian perfumery represents one of the oldest and most sophisticated fragrance traditions in the world. Dating back thousands of years, this art form has perfected the use of oud, amber, musk, and exotic spices to create scents that are both powerful and refined. Unlike Western perfumery, which often emphasizes freshness and subtlety, Arabian fragrances celebrate intensity, complexity, and longevity.
-                </p>
-                <p class="formatted-paragraph">
-                    Lattafa Perfumes embodies this tradition while embracing modern innovation. Based in Dubai, the brand has mastered the art of creating accessible luxury—offering complex, high-quality compositions at prices that democratize niche perfumery. Their fragrances often feature oud in various forms, from the medicinal intensity of pure oud to the smoother, more wearable interpretations blended with vanilla, rose, or spices.
-                </p>
-                <p class="formatted-paragraph">
-                    The appeal of Arabian perfumes extends beyond the Middle East. Globally, fragrance enthusiasts are discovering the unique character of these scents—their ability to project confidence, evoke mystery, and leave memorable impressions. Whether you prefer the smoky depth of Oud For Glory or the sweet warmth of Khamrah, Arabian perfumes offer a distinctive alternative to mainstream Western fragrances.
-                </p>
+            <!-- Image 2: Fakhar Black -->
+            <div class="image-card">
+                <img src="https://images.unsplash.com/photo-1541643600914-78a084bc5465?w=800&h=600&fit=crop" 
+                     alt="Fakhar Black - Dark Elegant Perfume Bottle" 
+                     loading="lazy">
+                <div class="image-caption">
+                    <h3>Fakhar Black</h3>
+                    <p>Mysterious & Deep</p>
+                </div>
             </div>
-            <div class="column-visual">
-                <div class="image-container">
-                    <div style="color: var(--gold); font-size: 8rem; opacity: 0.3;">⚜</div>
-                    <div class="image-overlay">
-                        <h3>Traditional Craft</h3>
-                        <p>Modern Excellence</p>
+
+            <!-- Image 3: Asad -->
+            <div class="image-card">
+                <img src="https://images.unsplash.com/photo-1587017539504-67cfbddac569?w=800&h=600&fit=crop" 
+                     alt="Asad - Spicy Warm Perfume with Tobacco Notes" 
+                     loading="lazy">
+                <div class="image-caption">
+                    <h3>Asad</h3>
+                    <p>Spicy & Warm</p>
+                </div>
+            </div>
+
+            <!-- Image 4: Khamrah -->
+            <div class="image-card">
+                <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=800&h=600&fit=crop" 
+                     alt="Khamrah - Sweet Gourmand Perfume with Cinnamon and Vanilla" 
+                     loading="lazy">
+                <div class="image-caption">
+                    <h3>Khamrah</h3>
+                    <p>Sweet & Gourmand</p>
+                </div>
+            </div>
+
+            <!-- Image 5: Raghba -->
+            <div class="image-card">
+                <img src="https://images.unsplash.com/photo-1523293188086-b15e4af6452e?w=800&h=600&fit=crop" 
+                     alt="Raghba - Soft Incense Perfume with Vanilla Notes" 
+                     loading="lazy">
+                <div class="image-caption">
+                    <h3>Raghba</h3>
+                    <p>Soft & Incense</p>
+                </div>
+            </div>
+
+            <!-- Image 6: Ejaazi -->
+            <div class="image-card">
+                <img src="https://images.unsplash.com/photo-1519669011783-4eaa95fa1b7d?w=800&h=600&fit=crop" 
+                     alt="Ejaazi - Fresh Dynamic Citrus Perfume" 
+                     loading="lazy">
+                <div class="image-caption">
+                    <h3>Ejaazi</h3>
+                    <p>Fresh & Dynamic</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Collection with Images and KSH Prices -->
+    <section class="gallery-section" style="background: var(--cream);">
+        <div class="section-header">
+            <span class="section-tag">Featured Products</span>
+            <h2 class="section-title">Shop Now</h2>
+            <p style="color: var(--text-light);">All prices in Kenyan Shillings (KSH)</p>
+        </div>
+        <div class="product-grid">
+            <!-- Product 1 with Image -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=600&h=400&fit=crop" 
+                         alt="Oud For Glory Perfume">
+                    <span class="product-badge">Best Seller</span>
+                </div>
+                <div class="product-info">
+                    <p class="product-brand">Lattafa Perfumes</p>
+                    <h3 class="product-name">Oud For Glory</h3>
+                    <p class="product-notes">Saffron, Lavender, Agarwood, Patchouli, Musk</p>
+                    <div class="product-footer">
+                        <div>
+                            <span class="price">6,750</span>
+                            <span class="price-original">9,750</span>
+                        </div>
+                        <button class="add-to-cart">+</button>
                     </div>
                 </div>
             </div>
-        </section>
-    </div>
 
-    <!-- PAGE 5: CONTACT -->
-    <div id="contact" class="page">
-        <div class="page-header">
-            <h1>Contact Us</h1>
-            <p>We'd love to hear from you. Reach out for inquiries, support, or fragrance advice.</p>
+            <!-- Product 2 with Image -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1541643600914-78a084bc5465?w=600&h=400&fit=crop" 
+                         alt="Fakhar Black Perfume">
+                    <span class="product-badge">New</span>
+                </div>
+                <div class="product-info">
+                    <p class="product-brand">Lattafa Perfumes</p>
+                    <h3 class="product-name">Fakhar Black</h3>
+                    <p class="product-notes">Apple, Bergamot, Lavender, Cedarwood, Amber</p>
+                    <div class="product-footer">
+                        <div>
+                            <span class="price">5,700</span>
+                            <span class="price-original">8,250</span>
+                        </div>
+                        <button class="add-to-cart">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 with Image -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1587017539504-67cfbddac569?w=600&h=400&fit=crop" 
+                         alt="Asad Perfume">
+                    <span class="product-badge">Popular</span>
+                </div>
+                <div class="product-info">
+                    <p class="product-brand">Lattafa Perfumes</p>
+                    <h3 class="product-name">Asad</h3>
+                    <p class="product-notes">Black Pepper, Tobacco, Vanilla, Amber, Sandalwood</p>
+                    <div class="product-footer">
+                        <div>
+                            <span class="price">6,300</span>
+                            <span class="price-original">9,000</span>
+                        </div>
+                        <button class="add-to-cart">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 4 with Image -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=600&h=400&fit=crop" 
+                         alt="Khamrah Perfume">
+                </div>
+                <div class="product-info">
+                    <p class="product-brand">Lattafa Perfumes</p>
+                    <h3 class="product-name">Khamrah</h3>
+                    <p class="product-notes">Cinnamon, Dates, Praline, Vanilla, Myrrh</p>
+                    <div class="product-footer">
+                        <div>
+                            <span class="price">7,200</span>
+                            <span class="price-original">10,500</span>
+                        </div>
+                        <button class="add-to-cart">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 5 with Image -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1523293188086-b15e4af6452e?w=600&h=400&fit=crop" 
+                         alt="Raghba Perfume">
+                </div>
+                <div class="product-info">
+                    <p class="product-brand">Lattafa Perfumes</p>
+                    <h3 class="product-name">Raghba</h3>
+                    <p class="product-notes">Incense, Sugar Cane, Vanilla, Sandalwood, Musk</p>
+                    <div class="product-footer">
+                        <div>
+                            <span class="price">5,250</span>
+                            <span class="price-original">7,500</span>
+                        </div>
+                        <button class="add-to-cart">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 6 with Image -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src= Image 1.jpg
+                         alt="Ejaazi Perfume">
+                    <span class="product-badge">Sale</span>
+                </div>
+                <div class="product-info">
+                    <p class="product-brand">Lattafa Perfumes</p>
+                    <h3 class="product-name">Ejaazi</h3>
+                    <p class="product-notes">Citrus, Spices, Woody Notes, Amber, Leather</p>
+                    <div class="product-footer">
+                        <div>
+                            <span class="price">6,000</span>
+                            <span class="price-original">8,700</span>
+                        </div>
+                        <button class="add-to-cart">+</button>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <section class="two-column" style="padding-top: 2rem;">
-            <div class="column-content">
-                <h2>Get in Touch</h2>
-                <p class="formatted-paragraph">
-                    Whether you have questions about a specific fragrance, need help choosing your signature scent, or want to inquire about wholesale opportunities, our team is here to assist. We pride ourselves on responsive, knowledgeable customer service that reflects the premium nature of our products.
-                </p>
-                <p class="formatted-paragraph">
-                    For fragrance consultations, we recommend booking a virtual appointment with one of our specialists. These personalized sessions allow us to understand your preferences, lifestyle, and previous fragrance experiences to recommend the perfect Lattafa perfumes for your collection.
-                </p>
-                <p class="formatted-paragraph">
-                    Wholesale and corporate gifting inquiries are welcome. We offer special pricing for bulk orders and can assist with custom packaging for corporate events or wedding favors. Contact our business development team for detailed information and catalog access.
-                </p>
-                <div style="margin-top: 2rem; padding: 1.5rem; background: var(--cream-dark); border-radius: 15px; border-left: 4px solid var(--gold);">
-                    <h4 style="color: var(--dark); margin-bottom: 0.5rem;">Direct Contact</h4>
-                    <p style="color: var(--text-light); margin-bottom: 0.3rem;">📧 support@udgoon.com</p>
-                    <p style="color: var(--text-light); margin-bottom: 0.3rem;">📞 +1 (555) 123-4567</p>
-                    <p style="color: var(--text-light);">📍 Dubai, UAE • New York, USA</p>
+    <!-- 4 YOUTUBE VIDEOS SECTION -->
+    <section class="video-section">
+        <div class="section-header">
+            <span class="section-tag">Video Reviews</span>
+            <h2 class="section-title">Fragrance Insights</h2>
+            <p style="color: #888;">Watch detailed reviews and perfume commercials</p>
+        </div>
+        <div class="video-grid">
+            <!-- Video 1 -->
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/xosjamQkGGs" 
+                            title="Perfume Ads 2"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">Perfume Ads Collection 2</h3>
+                    <p class="video-meta">Premium fragrance advertisements</p>
                 </div>
             </div>
-            <div class="column-visual">
-                <div class="contact-form">
-                    <h3 style="font-family: 'Playfair Display', serif; margin-bottom: 1.5rem; color: var(--dark); text-align: center;">Send Message</h3>
-                    <form onsubmit="event.preventDefault(); alert('Message sent! We will respond within 24 hours.');">
-                        <div class="form-group">
-                            <label>Full Name</label>
-                            <input type="text" placeholder="Your name" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Email Address</label>
-                            <input type="email" placeholder="your@email.com" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Subject</label>
-                            <input type="text" placeholder="How can we help?" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Message</label>
-                            <textarea rows="4" placeholder="Your message..." required></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">Send Message</button>
-                    </form>
+
+            <!-- Video 2 -->
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/dBwo5CULvm8" 
+                            title="Perfume Ads"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">Luxury Perfume Ads</h3>
+                    <p class="video-meta">High-end fragrance commercials</p>
                 </div>
             </div>
-        </section>
-    </div>
+
+            <!-- Video 3 -->
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/MAnb2zWYDus" 
+                            title="Perfume Commercials Compilation"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">Commercials Compilation</h3>
+                    <p class="video-meta">Best perfume commercials</p>
+                </div>
+            </div>
+
+            <!-- Video 4 -->
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/w4DQ2IY2jAI" 
+                            title="Every Perfume Commercial #shorts"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-info">
+                    <h3 class="video-title">Every Perfume Commercial</h3>
+                    <p class="video-meta">Shorts compilation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Two Tables Section with KSH -->
+    <section class="tables-section">
+        <div class="section-header">
+            <span class="section-tag">Detailed Information</span>
+            <h2 class="section-title">Product Catalog</h2>
+            <p style="color: var(--text-light);">Prices in Kenyan Shillings (KSH)</p>
+        </div>
+        <div class="tables-wrapper">
+            <!-- Men's Collection Table -->
+            <div class="table-container">
+                <h3 class="table-title">Men's Collection</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Fragrance</th>
+                            <th>Size</th>
+                            <th>Price (KSH)</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Oud For Glory</strong></td>
+                            <td>100ml EDP</td>
+                            <td class="price">6,750</td>
+                            <td><span class="badge in-stock">In Stock</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Asad</strong></td>
+                            <td>100ml EDP</td>
+                            <td class="price">6,300</td>
+                            <td><span class="badge in-stock">In Stock</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fakhar Black</strong></td>
+                            <td>100ml EDP</td>
+                            <td class="price">5,700</td>
+                            <td><span class="badge low-stock">Low Stock</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ejaazi</strong></td>
+                            <td>100ml EDP</td>
+                            <td class="price">6,000</td>
+                            <td><span class="badge in-stock">In Stock</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Maahir</strong></td>
+                            <td>100ml EDP</td>
+                            <td class="price">6,600</td>
+                            <td><span class="badge in-stock">In Stock</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Unisex & Women's Table -->
+            <div class="table-container">
+                <h3 class="table-title">Unisex & Women's</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Fragrance</th>
+                            <th>Size</th>
+                            <th>Price (KSH)</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Khamrah</strong></td>
+                            <td>100ml EDP</td>
+                            <td class="price">7,200</td>
+                            <td><span class="badge in-stock">In Stock</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Raghba</strong></td>
+                            <td>100ml EDP</td>
+                            <td class="price">5,250</td>
+                            <td><span class="badge in-stock">In Stock</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ana Abiyedh</strong></td>
+                            <td>60ml EDP</td>
+                            <td class="price">4,800</td>
+                            <td><span class="badge low-stock">Low Stock</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Yara</strong></td>
+                            <td>100ml EDP</td>
+                            <td class="price">5,400</td>
+                            <td><span class="badge in-stock">In Stock</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mayar</strong></td>
+                            <td>100ml EDP</td>
+                            <td class="price">5,700</td>
+                            <td><span class="badge in-stock">In Stock</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nested List Section -->
+    <section class="list-section" id="guide">
+        <div class="section-header">
+            <span class="section-tag">Education</span>
+            <h2 class="section-title">Fragrance Guide</h2>
+        </div>
+        <div class="guide-container">
+            <ol class="nested-list">
+                <li>
+                    <strong>The Fragrance Pyramid</strong>
+                    Understanding how perfumes evolve over time is essential for appreciation.
+                    <ul class="sub-list">
+                        <li>Top Notes: Initial impression lasting 15 minutes to 2 hours</li>
+                        <li>Heart Notes: Core personality emerging after 2-6 hours</li>
+                        <li>Base Notes: Foundation lingering 6+ hours</li>
+                        <li>Arabian perfumes emphasize base notes for longevity</li>
+                        <li>Lattafa specializes in complex base compositions</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Concentration Levels</strong>
+                    The intensity depends on perfume oil concentration.
+                    <ul class="sub-list">
+                        <li>Parfum (Extrait): 20-30% concentration, 8-24 hours</li>
+                        <li>Eau de Parfum (EDP): 15-20% concentration, 4-8 hours</li>
+                        <li>Eau de Toilette (EDT): 5-15% concentration, 2-4 hours</li>
+                        <li>Eau de Cologne: 2-4% concentration, 2-3 hours</li>
+                        <li>Lattafa primarily produces EDP for optimal value</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Fragrance Families</strong>
+                    Categories based on dominant characteristics.
+                    <ul class="sub-list">
+                        <li>Oriental: Warm, spicy, amber-rich with exotic resins</li>
+                        <li>Woody: Centered on sandalwood, cedar, and oud</li>
+                        <li>Floral: Featuring rose, jasmine, orange blossom</li>
+                        <li>Fresh: Citrus, aquatic, and green notes</li>
+                        <li>Gourmand: Edible scents like vanilla and caramel</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Application Techniques</strong>
+                    Proper application enhances performance.
+                    <ul class="sub-list">
+                        <li>Apply to pulse points: wrists, neck, behind ears</li>
+                        <li>Don't rub wrists together—breaks molecular structure</li>
+                        <li>Spray on clothing for extended longevity</li>
+                        <li>Moisturized skin holds fragrance longer</li>
+                        <li>Layer with matching products for intensity</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Storage and Preservation</strong>
+                    Protecting your investment requires proper care.
+                    <ul class="sub-list">
+                        <li>Store in cool, dark places away from sunlight</li>
+                        <li>Keep bottles in original boxes for protection</li>
+                        <li>Avoid bathroom storage due to humidity</li>
+                        <li>Ensure caps are tightly sealed</li>
+                        <li>Most perfumes last 3-5 years when stored properly</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- Special Feature: Scent Finder -->
+    <section class="scent-finder">
+        <div class="finder-container">
+            <h3>✦ Find Your Signature Scent ✦</h3>
+            <p>Select your preferred fragrance family and discover your perfect match</p>
+            <div class="finder-options">
+                <button class="finder-btn" onclick="showRec('oud')">Oud & Woody</button>
+                <button class="finder-btn" onclick="showRec('spicy')">Oriental Spicy</button>
+                <button class="finder-btn" onclick="showRec('sweet')">Sweet Gourmand</button>
+                <button class="finder-btn" onclick="showRec('fresh')">Fresh Citrus</button>
+            </div>
+            <div id="recommendation" class="recommendation">
+                <h4 id="rec-title" style="color: var(--gold); margin-bottom: 1rem; font-family: 'Playfair Display', serif;"></h4>
+                <p id="rec-desc" style="color: #ccc;"></p>
+                <p id="rec-price" style="color: var(--gold); margin-top: 1rem; font-weight: 700;"></p>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
-    <footer>
+    <footer id="contact">
         <div class="footer-content">
             <div class="footer-brand">
                 <h3>UDGOON</h3>
-                <p>Your trusted source for authentic Lattafa perfumes. We bring the luxury of Arabian fragrances to your doorstep with guaranteed authenticity, exceptional service, and competitive pricing.</p>
+                <p>Your trusted source for authentic Lattafa perfumes in Kenya. We bring the luxury of Arabian fragrances to your doorstep with guaranteed authenticity and prices in KSH.</p>
                 <div class="social-links">
                     <a href="#">f</a>
                     <a href="#">in</a>
@@ -1523,131 +1304,70 @@
             <div class="footer-column">
                 <h4>Shop</h4>
                 <ul>
-                    <li><a href="#" onclick="showPage('collection')">All Fragrances</a></li>
+                    <li><a href="#">All Fragrances</a></li>
                     <li><a href="#">New Arrivals</a></li>
                     <li><a href="#">Best Sellers</a></li>
                     <li><a href="#">Gift Sets</a></li>
-                    <li><a href="#">Samples</a></li>
                 </ul>
             </div>
             <div class="footer-column">
                 <h4>Help</h4>
                 <ul>
                     <li><a href="#">Shipping Info</a></li>
-                    <li><a href="#">Returns Policy</a></li>
+                    <li><a href="#">Returns</a></li>
                     <li><a href="#">Track Order</a></li>
                     <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Size Guide</a></li>
                 </ul>
             </div>
             <div class="footer-column">
-                <h4>Company</h4>
+                <h4>Contact</h4>
                 <ul>
-                    <li><a href="#" onclick="showPage('about')">About Us</a></li>
-                    <li><a href="#" onclick="showPage('fragrance-guide')">Fragrance Guide</a></li>
-                    <li><a href="#" onclick="showPage('contact')">Contact</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Nairobi, Kenya</a></li>
+                    <li><a href="#">support@udgoon.co.ke</a></li>
+                    <li><a href="#">+254 712 345 678</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Udgoon Collection. All rights reserved. Authentic Lattafa Reseller.</p>
-            <div class="payment-methods">
-                <span>💳</span>
-                <span>💰</span>
-                <span>💎</span>
-                <span>🏦</span>
-            </div>
+            <p>&copy; 2026 Udgoon Collection. All rights reserved. Prices in KSH (Kenyan Shillings).</p>
         </div>
     </footer>
 
     <script>
-        // Page Navigation
-        function showPage(pageName) {
-            // Hide all pages
-            document.querySelectorAll('.page').forEach(page => {
-                page.classList.remove('active');
-            });
-            
-            // Show selected page
-            document.getElementById(pageName).classList.add('active');
-            
-            // Scroll to top
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // Scent Finder Feature
-        function showRecommendation(type) {
+        function showRec(type) {
             const recommendations = {
-                'oud': {
-                    title: 'Oud For Glory',
-                    desc: 'A masterpiece of woody sophistication featuring saffron, lavender, and rich agarwood. Perfect for those who appreciate bold, commanding presence.'
+                'oud': { 
+                    title: 'Oud For Glory', 
+                    desc: 'A masterpiece of woody sophistication featuring saffron, lavender, and rich agarwood.',
+                    price: 'KSh 6,750'
                 },
-                'spicy': {
-                    title: 'Asad',
-                    desc: 'Tobacco and black pepper create a warm, spicy embrace balanced with vanilla and amber. Ideal for evening wear and special occasions.'
+                'spicy': { 
+                    title: 'Asad', 
+                    desc: 'Tobacco and black pepper create a warm, spicy embrace balanced with vanilla and amber.',
+                    price: 'KSh 6,300'
                 },
-                'sweet': {
-                    title: 'Khamrah',
-                    desc: 'A gourmand delight blending cinnamon, dates, and praline with vanilla and myrrh. Sweet yet sophisticated, perfect for cold weather.'
+                'sweet': { 
+                    title: 'Khamrah', 
+                    desc: 'A gourmand delight blending cinnamon, dates, and praline with vanilla and myrrh.',
+                    price: 'KSh 7,200'
                 },
-                'fresh': {
-                    title: 'Fakhar Black',
-                    desc: 'Crisp apple and bergamot open to a heart of lavender and cedarwood. Fresh yet substantial, suitable for daily wear.'
+                'fresh': { 
+                    title: 'Fakhar Black', 
+                    desc: 'Crisp apple and bergamot open to a heart of lavender and cedarwood.',
+                    price: 'KSh 5,700'
                 }
             };
-
+            
             const rec = recommendations[type];
-            document.getElementById('rec-title').textContent = rec.title;
+            document.getElementById('rec-title').textContent = 'Recommended: ' + rec.title;
             document.getElementById('rec-desc').textContent = rec.desc;
+            document.getElementById('rec-price').textContent = rec.price;
             document.getElementById('recommendation').classList.add('show');
-
-            // Update active button
-            document.querySelectorAll('.scent-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
+            
+            document.querySelectorAll('.finder-btn').forEach(btn => btn.classList.remove('active'));
             event.target.classList.add('active');
         }
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-
-        // Add scroll animation observer
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: "0px 0px -50px 0px"
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe elements for animation
-        document.querySelectorAll('.formatted-paragraph, .image-card, .video-container, .table-wrapper').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'all 0.6s ease';
-            observer.observe(el);
-        });
     </script>
 
 </body>
-  </html>
-
-
-
-
+    </html>
