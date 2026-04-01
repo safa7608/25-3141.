@@ -1,26 +1,2072 @@
-body{
-background-color: lavender;
-font-family: Arial, sans-serif;
-text-align: center;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Udgoon Collection | Premium Lattafa Perfumes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- External CSS Stylesheet -->
+    <style>
+        /* ============================================
+           UDGOON COLLECTION - EXTERNAL CSS STYLESHEET
+           ============================================ */
+        
+        /* CSS Variables / Custom Properties */
+        :root {
+            /* Color Palette */
+            --primary-gold: #D4AF37;
+            --gold-light: #F4E8C1;
+            --gold-dark: #B8941F;
+            --gold-muted: #C9B037;
+            
+            /* Background Colors */
+            --bg-dark: #1A1A1A;
+            --bg-darker: #0F0F1A;
+            --bg-cream: #F9F6F0;
+            --bg-cream-dark: #F0EBE0;
+            
+            /* Text Colors */
+            --text-primary: #2C2C2C;
+            --text-secondary: #666666;
+            --text-light: #888888;
+            --text-white: #FFFFFF;
+            
+            /* Accent Colors */
+            --accent-brown: #8B4513;
+            --accent-success: #28a745;
+            --accent-warning: #ffc107;
+            
+            /* Gradients */
+            --gradient-dark: linear-gradient(135deg, #1A1A1A 0%, #2D2D2D 100%);
+            --gradient-gold: linear-gradient(135deg, #D4AF37 0%, #B8941F 100%);
+            --gradient-cream: linear-gradient(to bottom, #F9F6F0 0%, #F0EBE0 100%);
+            --gradient-hero: linear-gradient(135deg, #0F0F1A 0%, #1A1A1A 50%, #2A2A2A 100%);
+            
+            /* Shadows */
+            --shadow-soft: 0 10px 40px rgba(0,0,0,0.1);
+            --shadow-medium: 0 15px 50px rgba(0,0,0,0.15);
+            --shadow-gold: 0 10px 40px rgba(212, 175, 55, 0.2);
+            --shadow-dark: 0 20px 60px rgba(0,0,0,0.3);
+            
+            /* Typography */
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+            --font-accent: 'Cormorant Garamond', serif;
+            
+            /* Spacing */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 2rem;
+            --space-lg: 4rem;
+            --space-xl: 6rem;
+            
+            /* Transitions */
+            --transition-fast: 0.3s ease;
+            --transition-medium: 0.5s ease;
+            --transition-slow: 0.8s ease;
+            
+            /* Border Radius */
+            --radius-sm: 10px;
+            --radius-md: 15px;
+            --radius-lg: 20px;
+            --radius-xl: 30px;
+            --radius-full: 50px;
+        }
 
-#container{
-width: 80%;
-margin: auto;
-}
+        /* CSS Reset & Base Styles */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-#main-title{
-color: purple;
-font-size: 40px;
-}
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
 
-.section-title{
-color: darkblue;
-margin-top: 20px;
-}
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-cream);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-.text{
-font-size: 18px;
-line-height: 1.6;
-color: black;
-}
+        /* Custom Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-cream);
+            border-left: 1px solid var(--gold-light);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gradient-gold);
+            border-radius: 6px;
+            border: 2px solid var(--bg-cream);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--gold-dark);
+        }
+
+        /* Selection Styling */
+        ::selection {
+            background: var(--primary-gold);
+            color: var(--bg-darker);
+        }
+
+        /* ============================================
+           NAVIGATION STYLES
+           ============================================ */
+        
+        .main-nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(26, 26, 26, 0.98);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 1000;
+            padding: var(--space-sm) 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid var(--primary-gold);
+            box-shadow: var(--shadow-dark);
+        }
+
+        .brand-logo {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 3px;
+            position: relative;
+            transition: var(--transition-fast);
+        }
+
+        .brand-logo:hover {
+            transform: scale(1.05);
+            filter: brightness(1.2);
+        }
+
+        .brand-logo::after {
+            content: '✦';
+            position: absolute;
+            right: -25px;
+            top: -5px;
+            font-size: 0.8rem;
+            color: var(--primary-gold);
+            -webkit-text-fill-color: var(--primary-gold);
+            animation: sparkle 2s infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.8); }
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            color: var(--text-white);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            position: relative;
+            padding: var(--space-xs) 0;
+            transition: var(--transition-fast);
+        }
+
+        .nav-menu a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-gold);
+            transition: width var(--transition-fast);
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-gold);
+        }
+
+        .nav-menu a:hover::before {
+            width: 100%;
+        }
+
+        .nav-icons {
+            display: flex;
+            gap: var(--space-md);
+            align-items: center;
+        }
+
+        .icon-btn {
+            background: none;
+            border: none;
+            color: var(--primary-gold);
+            font-size: 1.3rem;
+            cursor: pointer;
+            position: relative;
+            transition: var(--transition-fast);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+
+        .icon-btn:hover {
+            transform: scale(1.1) rotate(5deg);
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        .badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: var(--gradient-gold);
+            color: var(--bg-dark);
+            font-size: 0.7rem;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            animation: pulse-badge 2s infinite;
+        }
+
+        @keyframes pulse-badge {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        /* ============================================
+           PAGE CONTAINER SYSTEM
+           ============================================ */
+        
+        .page-container {
+            display: none;
+            min-height: 100vh;
+            padding-top: 80px;
+            animation: fadeInPage 0.6s ease;
+        }
+
+        .page-container.active {
+            display: block;
+        }
+
+        @keyframes fadeInPage {
+            from { 
+                opacity: 0; 
+                transform: translateY(30px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+
+        /* ============================================
+           HERO SECTION STYLES
+           ============================================ */
+        
+        .hero-section {
+            min-height: calc(100vh - 80px);
+            background: var(--gradient-hero);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+            animation: heroPulse 4s ease-in-out infinite;
+        }
+
+        @keyframes heroPulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            max-width: 900px;
+            padding: 0 var(--space-md);
+            position: relative;
+        }
+
+        .hero-subtitle {
+            color: var(--primary-gold);
+            font-size: 1rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: var(--space-md);
+            font-weight: 600;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-title {
+            font-family: var(--font-heading);
+            font-size: 4.5rem;
+            color: var(--text-white);
+            margin-bottom: var(--space-md);
+            line-height: 1.1;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease 0.2s both;
+        }
+
+        .hero-title .highlight {
+            color: var(--primary-gold);
+            font-style: italic;
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero-title .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient-gold);
+            transform: scaleX(0);
+            transform-origin: right;
+            animation: underlineExpand 1s ease 1s forwards;
+        }
+
+        @keyframes underlineExpand {
+            to { transform: scaleX(1); transform-origin: left; }
+        }
+
+        .hero-description {
+            color: #CCCCCC;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: var(--space-lg);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1s ease 0.4s both;
+        }
+
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0; 
+                transform: translateY(30px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+
+        /* ============================================
+           BUTTON COMPONENTS
+           ============================================ */
+        
+        .btn {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            border-radius: var(--radius-full);
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: var(--transition-fast);
+            cursor: pointer;
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: var(--gradient-gold);
+            color: var(--bg-dark);
+            box-shadow: var(--shadow-gold);
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: var(--transition-medium);
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        /* ============================================
+           TWO COLUMN LAYOUT SYSTEM
+           ============================================ */
+        
+        .two-column-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-lg);
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: var(--space-xl) 5%;
+            align-items: center;
+        }
+
+        .two-column-layout.reversed {
+            direction: rtl;
+        }
+
+        .two-column-layout.reversed > * {
+            direction: ltr;
+        }
+
+        .column-content h2 {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--text-primary);
+            margin-bottom: var(--space-md);
+            position: relative;
+            padding-bottom: var(--space-md);
+        }
+
+        .column-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--gradient-gold);
+            border-radius: 2px;
+        }
+
+        .formatted-paragraph {
+            margin-bottom: var(--space-md);
+            text-align: justify;
+            line-height: 1.8;
+            color: var(--text-primary);
+            font-size: 1.05rem;
+            text-indent: 2rem;
+            border-left: 3px solid var(--gold-light);
+            padding-left: var(--space-md);
+            margin-left: -var(--space-md);
+            position: relative;
+            transition: var(--transition-fast);
+        }
+
+        .formatted-paragraph:hover {
+            border-left-color: var(--primary-gold);
+            background: rgba(212, 175, 55, 0.02);
+            padding-right: var(--space-md);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+        }
+
+        .column-visual {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius-lg);
+            background: var(--gradient-dark);
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-medium);
+        }
+
+        .image-container:hover img {
+            transform: scale(1.05);
+        }
+
+        .image-placeholder {
+            color: var(--primary-gold);
+            font-size: 8rem;
+            opacity: 0.3;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            padding: var(--space-lg);
+            color: var(--text-white);
+            transform: translateY(20px);
+            opacity: 0;
+            transition: var(--transition-fast);
+        }
+
+        .image-container:hover .image-overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .image-overlay h3 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            margin-bottom: var(--space-xs);
+        }
+
+        .image-overlay p {
+            color: var(--gold-light);
+            font-size: 0.9rem;
+        }
+
+        /* ============================================
+           IMAGE GALLERY - 6 IMAGES
+           ============================================ */
+        
+        .gallery-section {
+            padding: var(--space-xl) 5%;
+            background: var(--gradient-cream);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--space-lg);
+        }
+
+        .section-tag {
+            color: var(--primary-gold);
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: var(--space-sm);
+            display: block;
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            color: var(--text-primary);
+            margin-bottom: var(--space-sm);
+        }
+
+        .section-description {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-md);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .image-card {
+            position: relative;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition-fast);
+            aspect-ratio: 4/3;
+            background: var(--bg-dark);
+            cursor: pointer;
+        }
+
+        .image-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .image-card .card-visual {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--primary-gold);
+            opacity: 0.8;
+            transition: var(--transition-fast);
+        }
+
+        .image-card:hover .card-visual {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        .image-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 26, 26, 0.95);
+            color: var(--primary-gold);
+            padding: var(--space-md);
+            font-weight: 600;
+            transform: translateY(100%);
+            transition: transform var(--transition-fast);
+            border-top: 2px solid var(--primary-gold);
+        }
+
+        .image-card:hover .image-caption {
+            transform: translateY(0);
+        }
+
+        /* ============================================
+           VIDEO SECTION - 4 VIDEOS
+           ============================================ */
+        
+        .video-section {
+            padding: var(--space-xl) 5%;
+            background: var(--bg-dark);
+            position: relative;
+        }
+
+        .video-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .video-section .section-title {
+            color: var(--text-white);
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-md);
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .video-container {
+            position: relative;
+            background: var(--gradient-dark);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 2px solid rgba(212, 175, 55, 0.2);
+            transition: var(--transition-fast);
+            aspect-ratio: 16/9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-container:hover {
+            border-color: var(--primary-gold);
+            transform: scale(1.02);
+            box-shadow: 0 20px 60px rgba(212, 175, 55, 0.2);
+        }
+
+        .video-placeholder {
+            text-align: center;
+            color: var(--primary-gold);
+            padding: var(--space-md);
+        }
+
+        .play-button {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-md);
+            cursor: pointer;
+            transition: var(--transition-fast);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+            position: relative;
+        }
+
+        .play-button::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid var(--primary-gold);
+            animation: ripple 2s infinite;
+        }
+
+        @keyframes ripple {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
+        .play-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.5);
+        }
+
+        .play-button::after {
+            content: '▶';
+            color: var(--bg-dark);
+            font-size: 1.5rem;
+            margin-left: 5px;
+        }
+
+        .video-title {
+            color: var(--text-white);
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            margin-bottom: var(--space-xs);
+        }
+
+        .video-meta {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* ============================================
+           TABLES STYLES - 2 TABLES
+           ============================================ */
+        
+        .tables-section {
+            padding: var(--space-xl) 5%;
+            background: var(--bg-cream);
+        }
+
+        .tables-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-lg);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .table-wrapper {
+            background: var(--text-white);
+            border-radius: var(--radius-lg);
+            padding: var(--space-lg);
+            box-shadow: var(--shadow-soft);
+            overflow: hidden;
+            transition: var(--transition-fast);
+        }
+
+        .table-wrapper:hover {
+            box-shadow: var(--shadow-medium);
+            transform: translateY(-5px);
+        }
+
+        .table-title {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            margin-bottom: var(--space-md);
+            text-align: center;
+            position: relative;
+            padding-bottom: var(--space-md);
+        }
+
+        .table-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 2px;
+            background: var(--gradient-gold);
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        .data-table thead {
+            background: var(--gradient-dark);
+        }
+
+        .data-table th {
+            color: var(--primary-gold);
+            padding: var(--space-md);
+            text-align: left;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+            border-bottom: 2px solid var(--primary-gold);
+        }
+
+        .data-table td {
+            padding: var(--space-md);
+            border-bottom: 1px solid #EEEEEE;
+            color: var(--text-primary);
+            transition: var(--transition-fast);
+        }
+
+        .data-table tr {
+            transition: var(--transition-fast);
+        }
+
+        .data-table tbody tr:hover {
+            background: var(--bg-cream);
+            transform: scale(1.01);
+        }
+
+        .data-table tbody tr:nth-child(even) {
+            background: #FAFAFA;
+        }
+
+        .data-table tbody tr:nth-child(even):hover {
+            background: var(--bg-cream-dark);
+        }
+
+        .price-tag {
+            color: var(--gold-dark);
+            font-weight: 700;
+            font-size: 1.1rem;
+            font-family: var(--font-heading);
+        }
+
+        .status-badge {
+            padding: 0.3rem 0.8rem;
+            border-radius: var(--radius-full);
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .status-badge.in-stock {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .status-badge.low-stock {
+            background: #fff3cd;
+            color: #856404;
+            border: 1px solid #ffeeba;
+        }
+
+        .product-name {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        /* ============================================
+           NESTED LIST STYLES - 5+ ITEMS
+           ============================================ */
+        
+        .list-section {
+            padding: var(--space-xl) 5%;
+            background: var(--gradient-cream);
+        }
+
+        .list-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--text-white);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .nested-list {
+            list-style: none;
+            counter-reset: item;
+        }
+
+        .nested-list > li {
+            counter-increment: item;
+            margin-bottom: var(--space-lg);
+            position: relative;
+            padding-left: 4rem;
+            transition: var(--transition-fast);
+        }
+
+        .nested-list > li:hover {
+            transform: translateX(10px);
+        }
+
+        .nested-list > li::before {
+            content: counter(item);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-gold);
+            color: var(--bg-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+            box-shadow: var(--shadow-gold);
+        }
+
+        .nested-list > li > strong {
+            display: block;
+            color: var(--text-primary);
+            font-size: 1.3rem;
+            margin-bottom: var(--space-sm);
+            font-family: var(--font-heading);
+            border-bottom: 1px solid var(--gold-light);
+            padding-bottom: var(--space-xs);
+        }
+
+        .sub-list {
+            list-style: none;
+            margin-top: var(--space-sm);
+            margin-left: var(--space-sm);
+        }
+
+        .sub-list li {
+            padding: var(--space-xs) 0;
+            padding-left: var(--space-md);
+            position: relative;
+            color: var(--text-secondary);
+            border-left: 2px solid var(--gold-light);
+            margin-bottom: var(--space-xs);
+            transition: var(--transition-fast);
+        }
+
+        .sub-list li:hover {
+            color: var(--text-primary);
+            border-left-color: var(--primary-gold);
+            padding-left: calc(var(--space-md) + 5px);
+        }
+
+        .sub-list li::before {
+            content: '✦';
+            position: absolute;
+            left: var(--space-xs);
+            color: var(--primary-gold);
+            font-size: 0.6rem;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        /* ============================================
+           SPECIAL FEATURE: SCENT FINDER
+           ============================================ */
+        
+        .special-feature-section {
+            padding: var(--space-xl) 5%;
+            background: var(--bg-dark);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .special-feature-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                repeating-linear-gradient(
+                    45deg,
+                    transparent,
+                    transparent 10px,
+                    rgba(212, 175, 55, 0.02) 10px,
+                    rgba(212, 175, 55, 0.02) 20px
+                );
+            animation: backgroundMove 20s linear infinite;
+        }
+
+        @keyframes backgroundMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .scent-finder-widget {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.03);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: var(--radius-xl);
+            padding: var(--space-xl);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+        }
+
+        .scent-finder-widget h3 {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: var(--space-sm);
+        }
+
+        .scent-finder-widget > p {
+            color: var(--text-light);
+            margin-bottom: var(--space-lg);
+            font-size: 1.1rem;
+        }
+
+        .scent-options {
+            display: flex;
+            gap: var(--space-md);
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: var(--space-lg);
+        }
+
+        .scent-option-btn {
+            padding: 1rem 2rem;
+            background: transparent;
+            border: 2px solid var(--primary-gold);
+            color: var(--primary-gold);
+            border-radius: var(--radius-full);
+            cursor: pointer;
+            transition: var(--transition-fast);
+            font-weight: 600;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scent-option-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-gold);
+            transition: var(--transition-fast);
+            z-index: -1;
+        }
+
+        .scent-option-btn:hover,
+        .scent-option-btn.active {
+            color: var(--bg-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .scent-option-btn:hover::before,
+        .scent-option-btn.active::before {
+            left: 0;
+        }
+
+        .recommendation-panel {
+            display: none;
+            background: rgba(212, 175, 55, 0.1);
+            border: 2px solid var(--primary-gold);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+            margin-top: var(--space-lg);
+            animation: slideUp 0.5s ease;
+            text-align: left;
+        }
+
+        .recommendation-panel.show {
+            display: block;
+        }
+
+        @keyframes slideUp {
+            from { 
+                opacity: 0; 
+                transform: translateY(30px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+
+        .recommendation-panel h4 {
+            color: var(--primary-gold);
+            margin-bottom: var(--space-md);
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            padding-bottom: var(--space-sm);
+        }
+
+        .recommendation-panel h4 span {
+            color: var(--text-white);
+            font-style: italic;
+        }
+
+        .recommendation-panel p {
+            color: #CCCCCC;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        /* ============================================
+           PAGE HEADER STYLES
+           ============================================ */
+        
+        .page-header {
+            background: var(--gradient-dark);
+            padding: var(--space-xl) 5% var(--space-lg);
+            text-align: center;
+            color: var(--text-white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+        }
+
+        .page-header h1 {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            margin-bottom: var(--space-md);
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-header p {
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ============================================
+           CONTACT FORM STYLES
+           ============================================ */
+        
+        .contact-form-container {
+            max-width: 600px;
+            margin: var(--space-lg) auto;
+            background: var(--text-white);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-soft);
+            border-top: 4px solid var(--primary-gold);
+        }
+
+        .form-group {
+            margin-bottom: var(--space-md);
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: var(--space-xs);
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #EEEEEE;
+            border-radius: var(--radius-sm);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: var(--transition-fast);
+            background: var(--bg-cream);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+            background: var(--text-white);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* ============================================
+           FOOTER STYLES
+           ============================================ */
+        
+        .main-footer {
+            background: var(--bg-darker);
+            color: var(--text-white);
+            padding: var(--space-xl) 5% var(--space-md);
+            border-top: 3px solid var(--primary-gold);
+            position: relative;
+        }
+
+        .main-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--gradient-gold);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: var(--space-lg);
+            margin-bottom: var(--space-xl);
+        }
+
+        .footer-brand h3 {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: var(--space-md);
+            letter-spacing: 2px;
+        }
+
+        .footer-brand p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: var(--space-lg);
+            font-size: 0.95rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: var(--space-sm);
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--primary-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: var(--transition-fast);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            font-weight: 600;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-gold);
+            transform: scale(0);
+            transition: var(--transition-fast);
+            border-radius: 50%;
+        }
+
+        .social-link:hover {
+            color: var(--bg-dark);
+            transform: translateY(-3px);
+        }
+
+        .social-link:hover::before {
+            transform: scale(1);
+        }
+
+        .social-link span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-column h4 {
+            color: var(--primary-gold);
+            margin-bottom: var(--space-md);
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            position: relative;
+            padding-bottom: var(--space-sm);
+        }
+
+        .footer-column h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: var(--gradient-gold);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: var(--space-sm);
+        }
+
+        .footer-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: var(--transition-fast);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-links a::before {
+            content: '→';
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: var(--transition-fast);
+            color: var(--primary-gold);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-gold);
+            transform: translateX(5px);
+        }
+
+        .footer-links a:hover::before {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: var(--space-lg);
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            color: #555;
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--space-md);
+        }
+
+        .payment-icons {
+            display: flex;
+            gap: var(--space-sm);
+            font-size: 1.5rem;
+        }
+
+        /* ============================================
+           RESPONSIVE DESIGN
+           ============================================ */
+        
+        @media (max-width: 1024px) {
+            .two-column-layout,
+            .tables-container {
+                grid-template-columns: 1fr;
+                gap: var(--space-md);
+            }
+
+            .image-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero-title {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .image-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: var(--space-lg);
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .scent-options {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .scent-option-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .tables-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ============================================
+           UTILITY CLASSES
+           ============================================ */
+        
+        .text-center { text-align: center; }
+        .text-right { text-align: right; }
+        .text-gold { color: var(--primary-gold); }
+        .bg-dark { background: var(--bg-dark); }
+        .bg-cream { background: var(--bg-cream); }
+        .mt-1 { margin-top: var(--space-sm); }
+        .mt-2 { margin-top: var(--space-md); }
+        .mt-3 { margin-top: var(--space-lg); }
+        .mb-1 { margin-bottom: var(--space-sm); }
+        .mb-2 { margin-bottom: var(--space-md); }
+        .mb-3 { margin-bottom: var(--space-lg); }
+        .hidden { display: none; }
+        .visible { display: block; }
+
+        /* Animation Utilities */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity var(--transition-slow), transform var(--transition-slow);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scale-in {
+            transform: scale(0.9);
+            opacity: 0;
+            transition: var(--transition-medium);
+        }
+
+        .scale-in.visible {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(212, 175, 55, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--primary-gold);
+            animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <a href="#" class="brand-logo" onclick="navigateTo('home')">UDGOON</a>
+        <ul class="nav-menu">
+            <li><a href="#" onclick="navigateTo('home')">Home</a></li>
+            <li><a href="#" onclick="navigateTo('collection')">Collection</a></li>
+            <li><a href="#" onclick="navigateTo('about')">About</a></li>
+            <li><a href="#" onclick="navigateTo('guide')">Fragrance Guide</a></li>
+            <li><a href="#" onclick="navigateTo('contact')">Contact</a></li>
+        </ul>
+        <div class="nav-icons">
+            <button class="icon-btn" title="Search">🔍</button>
+            <button class="icon-btn" title="Account">👤</button>
+            <button class="icon-btn" title="Cart">
+                🛒
+                <span class="badge">3</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- PAGE 1: HOME -->
+    <main id="page-home" class="page-container active">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <p class="hero-subtitle">✦ Authentic Lattafa Reseller ✦</p>
+                <h1 class="hero-title">Discover the Art of <span class="highlight">Oriental</span> Fragrance</h1>
+                <p class="hero-description">Udgoon Collection brings you the finest Lattafa perfumes, crafted with precious ingredients and traditional Arabian perfumery expertise. Experience luxury that lingers.</p>
+                <a href="#" class="btn btn-primary" onclick="navigateTo('collection')">Explore Collection</a>
+            </div>
+        </section>
+
+        <!-- Two Column Section 1 -->
+        <section class="two-column-layout">
+            <div class="column-content">
+                <h2>The Essence of Arabian Luxury</h2>
+                <p class="formatted-paragraph">
+                    Lattafa Perfumes represents the pinnacle of Middle Eastern fragrance craftsmanship, blending centuries-old traditions with contemporary sophistication. Each bottle encapsulates the rich heritage of Arabian perfumery, where precious oud, exotic spices, and rare florals converge to create scents that transcend ordinary fragrance experiences.
+                </p>
+                <p class="formatted-paragraph">
+                    At Udgoon Collection, we curate only the most exceptional Lattafa creations, ensuring that every fragrance meets our stringent standards of authenticity and excellence. Our direct partnerships with Lattafa guarantee that you receive genuine products, never compromised by dilution or counterfeiting.
+                </p>
+                <p class="formatted-paragraph">
+                    Whether you seek the bold intensity of Oud For Glory or the subtle elegance of Raghba, our collection offers a scent for every personality and occasion. Discover fragrances that don't just smell divine—they tell stories, evoke memories, and leave lasting impressions.
+                </p>
+            </div>
+            <div class="column-visual">
+                <div class="image-container">
+                    <div class="image-placeholder">🜲</div>
+                    <div class="image-overlay">
+                        <h3>Premium Selection</h3>
+                        <p>Curated by experts</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Two Column Section 2 (Reversed) -->
+        <section class="two-column-layout reversed">
+            <div class="column-content">
+                <h2>Why Choose Udgoon?</h2>
+                <p class="formatted-paragraph">
+                    Our commitment to authenticity sets us apart in the fragrance industry. Every perfume in our collection undergoes rigorous verification processes, ensuring that you receive only genuine Lattafa products. We understand that fragrance is personal—a signature that defines your presence.
+                </p>
+                <p class="formatted-paragraph">
+                    Beyond authenticity, we offer an immersive shopping experience guided by fragrance experts who understand the nuances of notes, accords, and silage. Whether you're a seasoned collector or new to Arabian perfumes, our team provides personalized recommendations.
+                </p>
+                <p class="formatted-paragraph">
+                    With worldwide shipping, secure packaging, and dedicated customer support, Udgoon Collection transforms online perfume shopping into a luxury experience. Join thousands of satisfied customers who have discovered their signature scents.
+                </p>
+            </div>
+            <div class="column-visual">
+                <div class="image-container" style="background: linear-gradient(135deg, #2A2A2A 0%, #1A1A1A 100%);">
+                    <div class="image-placeholder">◈</div>
+                    <div class="image-overlay">
+                        <h3>Trusted Worldwide</h3>
+                        <p>50,000+ happy customers</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6 Images Gallery -->
+        <section class="gallery-section">
+            <div class="section-header">
+                <span class="section-tag">Visual Journey</span>
+                <h2 class="section-title">The Collection</h2>
+                <p class="section-description">Explore our curated selection through imagery</p>
+            </div>
+            <div class="image-grid">
+                <div class="image-card">
+                    <div class="card-visual" style="background: linear-gradient(135deg, #3A2A1A 0%, #1A1A1A 100%);">🜲</div>
+                    <div class="image-caption">Oud For Glory</div>
+                </div>
+                <div class="image-card">
+                    <div class="card-visual" style="background: linear-gradient(135deg, #2A1A2A 0%, #1A1A1A 100%);">✦</div>
+                    <div class="image-caption">Fakhar Black</div>
+                </div>
+                <div class="image-card">
+                    <div class="card-visual" style="background: linear-gradient(135deg, #1A2A2A 0%, #1A1A1A 100%);">◈</div>
+                    <div class="image-caption">Asad</div>
+                </div>
+                <div class="image-card">
+                    <div class="card-visual" style="background: linear-gradient(135deg, #2A2A1A 0%, #1A1A1A 100%);">⬟</div>
+                    <div class="image-caption">Khamrah</div>
+                </div>
+                <div class="image-card">
+                    <div class="card-visual" style="background: linear-gradient(135deg, #1A1A2A 0%, #1A1A1A 100%);">⬢</div>
+                    <div class="image-caption">Raghba</div>
+                </div>
+                <div class="image-card">
+                    <div class="card-visual" style="background: linear-gradient(135deg, #2A1A1A 0%, #1A1A1A 100%);">◉</div>
+                    <div class="image-caption">Ejaazi</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Special Feature: Scent Finder -->
+        <section class="special-feature-section">
+            <div class="scent-finder-widget">
+                <h3>✦ Find Your Signature Scent ✦</h3>
+                <p>Select your preferred fragrance family and discover your perfect match</p>
+                <div class="scent-options">
+                    <button class="scent-option-btn" onclick="findScent('oud')">Oud & Woody</button>
+                    <button class="scent-option-btn" onclick="findScent('spicy')">Oriental Spicy</button>
+                    <button class="scent-option-btn" onclick="findScent('sweet')">Sweet Gourmand</button>
+                    <button class="scent-option-btn" onclick="findScent('fresh')">Fresh Citrus</button>
+                </div>
+                <div id="scent-recommendation" class="recommendation-panel">
+                    <h4>Recommended: <span id="rec-name">Oud For Glory</span></h4>
+                    <p id="rec-description">Description here...</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- PAGE 2: COLLECTION -->
+    <main id="page-collection" class="page-container">
+        <header class="page-header">
+            <h1>Our Collection</h1>
+            <p>Discover our handpicked selection of Lattafa's finest fragrances, each telling a unique olfactory story.</p>
+        </header>
+
+        <!-- 4 Videos Section -->
+        <section class="video-section">
+            <div class="section-header">
+                <span class="section-tag">Video Reviews</span>
+                <h2 class="section-title">Fragrance Insights</h2>
+            </div>
+            <div class="video-grid">
+                <div class="video-container">
+                    <div class="video-placeholder">
+                        <div class="play-button"></div>
+                        <div class="video-title">Oud For Glory Review</div>
+                        <div class="video-meta">Duration: 4:32 • 12K views</div>
+                    </div>
+                </div>
+                <div class="video-container">
+                    <div class="video-placeholder">
+                        <div class="play-button"></div>
+                        <div class="video-title">Khamrah Unboxing</div>
+                        <div class="video-meta">Duration: 3:15 • 8.5K views</div>
+                    </div>
+                </div>
+                <div class="video-container">
+                    <div class="video-placeholder">
+                        <div class="play-button"></div>
+                        <div class="video-title">Asad First Impressions</div>
+                        <div class="video-meta">Duration: 5:20 • 15K views</div>
+                    </div>
+                </div>
+                <div class="video-container">
+                    <div class="video-placeholder">
+                        <div class="play-button"></div>
+                        <div class="video-title">Top 5 Lattafa Fragrances</div>
+                        <div class="video-meta">Duration: 8:45 • 45K views</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Two Tables -->
+        <section class="tables-section">
+            <div class="section-header">
+                <span class="section-tag">Detailed Information</span>
+                <h2 class="section-title">Product Catalog</h2>
+            </div>
+            <div class="tables-container">
+                <div class="table-wrapper">
+                    <h3 class="table-title">Men's Collection</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Fragrance</th>
+                                <th>Size</th>
+                                <th>Price</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="product-name">Oud For Glory</td>
+                                <td>100ml EDP</td>
+                                <td class="price-tag">$45.00</td>
+                                <td><span class="status-badge in-stock">In Stock</span></td>
+                            </tr>
+                            <tr>
+                                <td class="product-name">Asad</td>
+                                <td>100ml EDP</td>
+                                <td class="price-tag">$42.00</td>
+                                <td><span class="status-badge in-stock">In Stock</span></td>
+                            </tr>
+                            <tr>
+                                <td class="product-name">Fakhar Black</td>
+                                <td>100ml EDP</td>
+                                <td class="price-tag">$38.00</td>
+                                <td><span class="status-badge low-stock">Low Stock</span></td>
+                            </tr>
+                            <tr>
+                                <td class="product-name">Ejaazi</td>
+                                <td>100ml EDP</td>
+                                <td class="price-tag">$40.00</td>
+                                <td><span class="status-badge in-stock">In Stock</span></td>
+                            </tr>
+                            <tr>
+                                <td class="product-name">Maahir</td>
+                                <td>100ml EDP</td>
+                                <td class="price-tag">$44.00</td>
+                                <td><span class="status-badge in-stock">In Stock</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="table-wrapper">
+                    <h3 class="table-title">Unisex & Women's</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Fragrance</th>
+                                <th>Size</th>
+                                <th>Price</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="product-name">Khamrah</td>
+                                <td>100ml EDP</td>
+                                <td class="price-tag">$48.00</td>
+                                <td><span class="status-badge in-stock">In Stock</span></td>
+                            </tr>
+                            <tr>
+                                <td class="product-name">Raghba</td>
+                                <td>100ml EDP</td>
+                                <td class="price-tag">$35.00</td>
+                                <td><span class="status-badge in-stock">In Stock</span></td>
+                            </tr>
+                            <tr>
+                                <td class="product-name">Ana Abiyedh</td>
+                                <td>60ml EDP</td>
+                                <td class="price-tag">$32.00</td>
+                                <td><span class="status-badge low-stock">Low Stock</span></td>
+                            </tr>
+                            <tr>
+                                <td class="product-name">Yara</td>
+                                <td>100ml EDP</td>
+                                <td class="price-tag">$36.00</td>
+                                <td><span class="status-badge in-stock">In Stock</span></td>
+                            </tr>
+                            <tr>
+                                <td class="product-name">Mayar</td>
+                                <td>100ml EDP</td>
+                                <td class="price-tag">$38.00</td>
+                                <td><span class="status-badge in-stock">In Stock</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- PAGE 3: ABOUT -->
+    <main id="page-about" class="page-container">
+        <header class="page-header">
+            <h1>Our Story</h1>
+            <p>From passion to profession: the journey of Udgoon Collection</p>
+        </header>
+
+        <section class="two-column-layout" style="padding-top: var(--space-lg);">
+            <div class="column-content">
+                <h2>Our Heritage</h2>
+                <p class="formatted-paragraph">
+                    Founded in 2020, Udgoon Collection emerged from a profound appreciation for Arabian perfumery and a desire to share these olfactory treasures with the world. The name "Udgoon" draws from Somali and Arabic roots, evoking the essence of fragrance and the art of scent.
+                </p>
+                <p class="formatted-paragraph">
+                    Our founder's journey began in the bustling perfume souks of Dubai, where the intoxicating blend of oud, amber, and rose sparked an enduring passion. What started as a personal collection soon evolved into a mission: to bridge the gap between traditional Arabian perfumery and contemporary fragrance enthusiasts.
+                </p>
+                <p class="formatted-paragraph">
+                    Today, Udgoon Collection stands as a trusted authority in Lattafa perfumes, serving customers across six continents. We maintain direct relationships with Lattafa's master perfumers, ensuring that every bottle represents the brand's commitment to excellence.
+                </p>
+            </div>
+            <div class="column-visual">
+                <div class="image-container" style="min-height: 500px;">
+                    <div class="image-placeholder">❋</div>
+                    <div class="image-overlay">
+                        <h3>Since 2020</h3>
+                        <p>Dedicated to authenticity</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="two-column-layout reversed" style="background: var(--bg-cream-dark);">
+            <div class="column-content">
+                <h2>Our Philosophy</h2>
+                <p class="formatted-paragraph">
+                    We believe that fragrance is more than a cosmetic accessory—it is an expression of identity, a trigger for memory, and a form of art that transcends language and culture. This philosophy guides every aspect of our business.
+                </p>
+                <p class="formatted-paragraph">
+                    Sustainability and ethical sourcing are integral to our operations. We work exclusively with suppliers who share our commitment to responsible practices, ensuring that precious ingredients contribute positively to communities and ecosystems.
+                </p>
+                <p class="formatted-paragraph">
+                    Education forms the cornerstone of our customer relationships. We don't just sell perfumes; we guide you through the intricate world of fragrance notes, accords, and families. Our detailed descriptions ensure informed choices.
+                </p>
+            </div>
+            <div class="column-visual">
+                <div class="image-container" style="background: linear-gradient(135deg, #1A1A2A 0%, #0F0F1A 100%); min-height: 500px;">
+                    <div class="image-placeholder">✦</div>
+                    <div class="image-overlay">
+                        <h3>Values First</h3>
+                        <p>Ethics & Excellence</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- PAGE 4: FRAGRANCE GUIDE -->
+    <main id="page-guide" class="page-container">
+        <header class="page-header">
+            <h1>Fragrance Guide</h1>
+            <p>Master the art of perfume with our comprehensive guide</p>
+        </header>
+
+        <!-- Nested List Section -->
+        <section class="list-section">
+            <div class="section-header">
+                <span class="section-tag">Education</span>
+                <h2 class="section-title">Understanding Fragrance</h2>
+            </div>
+            <div class="list-container">
+                <ol class="nested-list">
+                    <li>
+                        <strong>The Fragrance Pyramid</strong>
+                        Understanding how perfumes evolve over time is essential for appreciation. Fragrances unfold in three distinct stages.
+                        <ul class="sub-list">
+                            <li>Top Notes: The initial impression lasting 15 minutes to 2 hours</li>
+                            <li>Heart Notes: The core personality emerging after 2-6 hours</li>
+                            <li>Base Notes: The foundation lingering 6+ hours</li>
+                            <li>Arabian perfumes often emphasize base notes for longevity</li>
+                            <li>Lattafa specializes in complex base note compositions</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Concentration Levels</strong>
+                        The intensity and longevity of a fragrance depend on its concentration of perfume oils.
+                        <ul class="sub-list">
+                            <li>Parfum (Extrait): 20-30% concentration, 8-24 hours longevity</li>
+                            <li>Eau de Parfum (EDP): 15-20% concentration, 4-8 hours longevity</li>
+                            <li>Eau de Toilette (EDT): 5-15% concentration, 2-4 hours longevity</li>
+                            <li>Eau de Cologne: 2-4% concentration, 2-3 hours longevity</li>
+                            <li>Lattafa primarily produces EDP for optimal value</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Fragrance Families</strong>
+                        Perfumes are categorized into families based on their dominant characteristics.
+                        <ul class="sub-list">
+                            <li>Oriental: Warm, spicy, amber-rich with exotic resins</li>
+                            <li>Woody: Centered on sandalwood, cedar, and oud</li>
+                            <li>Floral: Featuring rose, jasmine, and orange blossom</li>
+                            <li>Fresh: Citrus, aquatic, and green notes</li>
+                            <li>Gourmand: Edible scents like vanilla, caramel, and spices</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Application Techniques</strong>
+                        Proper application enhances fragrance performance and longevity.
+                        <ul class="sub-list">
+                            <li>Apply to pulse points: wrists, neck, behind ears</li>
+                            <li>Don't rub wrists together—it breaks molecular structure</li>
+                            <li>Spray on clothing for extended longevity</li>
+                            <li>Moisturized skin holds fragrance longer</li>
+                            <li>Layer with matching body products for intensity</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Storage and Preservation</strong>
+                        Protecting your investment requires proper storage.
+                        <ul class="sub-list">
+                            <li>Store in cool, dark places away from sunlight</li>
+                            <li>Keep bottles in original boxes for extra protection</li>
+                            <li>Avoid bathroom storage due to humidity fluctuations</li>
+                            <li>Ensure caps are tightly sealed to prevent oxidation</li>
+                            <li>Most perfumes last 3-5 years when stored properly</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </section>
+    </main>
+
+    <!-- PAGE 5: CONTACT -->
+    <main id="page-contact" class="page-container">
+        <header class="page-header">
+            <h1>Contact Us</h1>
+            <p>We'd love to hear from you. Reach out for inquiries, support, or fragrance advice.</p>
+        </header>
+
+        <section class="two-column-layout" style="padding-top: var(--space-lg);">
+            <div class="column-content">
+                <h2>Get in Touch</h2>
+                <p class="formatted-paragraph">
+                    Whether you have questions about a specific fragrance, need help choosing your signature scent, or want to inquire about wholesale opportunities, our team is here to assist.
+                </p>
+                <p class="formatted-paragraph">
+                    For fragrance consultations, we recommend booking a virtual appointment with one of our specialists. These personalized sessions allow us to understand your preferences and lifestyle.
+                </p>
+                <p class="formatted-paragraph">
+                    Wholesale and corporate gifting inquiries are welcome. We offer special pricing for bulk orders and can assist with custom packaging for events.
+                </p>
+                <div style="margin-top: var(--space-lg); padding: var(--space-md); background: var(--bg-cream-dark); border-radius: var(--radius-md); border-left: 4px solid var(--primary-gold);">
+                    <h4 style="color: var(--text-primary); margin-bottom: var(--space-sm);">Direct Contact</h4>
+                    <p style="color: var(--text-secondary); margin-bottom: 0.3rem;">📧 support@udgoon.com</p>
+                    <p style="color: var(--text-secondary); margin-bottom: 0.3rem;">📞 +1 (555) 123-4567</p>
+                    <p style="color: var(--text-secondary);">📍 Dubai, UAE • New York, USA</p>
+                </div>
+            </div>
+            <div class="column-visual">
+                <div class="contact-form-container">
+                    <h3 style="font-family: var(--font-heading); margin-bottom: var(--space-md); color: var(--text-primary); text-align: center;">Send Message</h3>
+                    <form onsubmit="event.preventDefault(); alert('Thank you! We will respond within 24 hours.');">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" class="form-control" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" class="form-control" placeholder="your@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Subject</label>
+                            <input type="text" class="form-control" placeholder="How can we help?" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea class="form-control" rows="4" placeholder="Your message..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>UDGOON</h3>
+                <p>Your trusted source for authentic Lattafa perfumes. We bring the luxury of Arabian fragrances to your doorstep with guaranteed authenticity.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link"><span>f</span></a>
+                    <a href="#" class="social-link"><span>in</span></a>
+                    <a href="#" class="social-link"><span>ig</span></a>
+                    <a href="#" class="social-link"><span>tw</span></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h4>Shop</h4>
+                <ul class="footer-links">
+                    <li><a href="#" onclick="navigateTo('collection')">All Fragrances</a></li>
+                    <li><a href="#">New Arrivals</a></li>
+                    <li><a href="#">Best Sellers</a></li>
+                    <li><a href="#">Gift Sets</a></li>
+                    <li><a href="#">Samples</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Help</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Shipping Info</a></li>
+                    <li><a href="#">Returns Policy</a></li>
+                    <li><a href="#">Track Order</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Size Guide</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul class="footer-links">
+                    <li><a href="#" onclick="navigateTo('about')">About Us</a></li>
+                    <li><a href="#" onclick="navigateTo('guide')">Fragrance Guide</a></li>
+                    <li><a href="#" onclick="navigateTo('contact')">Contact</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+       
