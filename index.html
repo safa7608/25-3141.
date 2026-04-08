@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -175,7 +172,7 @@
             padding-left: 1.5rem;
         }
 
-        /* Video Section - FIXED WITH WORKING VIDEOS */
+        /* Video Section */
         .video-section {
             padding: 5rem 5%;
             background: var(--dark);
@@ -245,7 +242,7 @@
             font-size: 0.9rem;
         }
 
-        /* Image Gallery with SRC */
+        /* Image Gallery with LOCAL IMAGES */
         .gallery-section {
             padding: 5rem 5%;
             background: var(--cream-dark);
@@ -404,7 +401,7 @@
             color: #856404;
         }
 
-        /* Product Cards with Images */
+        /* Product Cards with LOCAL IMAGES */
         .product-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -431,6 +428,7 @@
             height: 300px;
             position: relative;
             overflow: hidden;
+            background: var(--dark);
         }
 
         .product-image img {
@@ -740,6 +738,12 @@
             color: #555;
         }
 
+        /* Image Loading Fallback */
+        .image-card img, .product-image img {
+            background: linear-gradient(135deg, #2A2A2A 0%, #1A1A1A 100%);
+            min-height: 100%;
+        }
+
         /* Responsive */
         @media (max-width: 1024px) {
             .two-column,
@@ -802,7 +806,7 @@
         </div>
     </section>
 
-    <!-- Two Column Section - REMOVED BLACK STAR PICTURE -->
+    <!-- Two Column Section - WITH LOCAL IMAGE P1.jpg -->
     <section class="two-column" id="about">
         <div>
             <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 2rem; color: var(--dark);">The Essence of Arabian Luxury</h2>
@@ -816,11 +820,11 @@
                 Whether you seek the bold intensity of Oud For Glory or the subtle elegance of Raghba, our collection offers a scent for every personality and occasion. All prices are displayed in KSH for your convenience.
             </p>
         </div>
-        <!-- REPLACED BLACK STAR WITH PROPER IMAGE -->
+        <!-- LOCAL IMAGE P1.jpg -->
         <div class="image-card" style="height: 500px;">
-            <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=800&h=600&fit=crop" 
-                 alt="Luxury Arabian Perfume Collection" 
-                 style="width: 100%; height: 100%; object-fit: cover;">
+            <img src="P1.jpg" 
+                 alt="Udgoon Collection - Luxury Arabian Perfumes" 
+                 onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;color:var(--gold);font-size:4rem;\'>✦</div>';">
             <div class="image-caption">
                 <h3>Udgoon Collection</h3>
                 <p>Authentic Lattafa Reseller</p>
@@ -828,7 +832,7 @@
         </div>
     </section>
 
-    <!-- 6 IMAGES WITH SRC - GALLERY SECTION -->
+    <!-- 6 LOCAL IMAGES - GALLERY SECTION -->
     <section class="gallery-section" id="collection">
         <div class="section-header">
             <span class="section-tag">Visual Journey</span>
@@ -836,66 +840,72 @@
             <p style="color: var(--text-light);">Explore our curated selection</p>
         </div>
         <div class="image-grid">
-            <!-- Image 1: Oud For Glory -->
+            <!-- Image 1: P1.jpg - Oud For Glory -->
             <div class="image-card">
-                <img src=P1.jpg 
-                     alt="Oud For Glory - Luxury Arabian Perfume with Oud and Spicy Notes" 
-                     loading="lazy">
+                <img src="P1.jpg" 
+                     alt="Oud For Glory - Luxury Arabian Perfume" 
+                     loading="lazy"
+                     onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;color:var(--gold);font-size:3rem;\'>🜲</div>';">
                 <div class="image-caption">
                     <h3>Oud For Glory</h3>
                     <p>Bold & Commanding</p>
                 </div>
             </div>
 
-            <!-- Image 2: Fakhar Black -->
+            <!-- Image 2: P2.jpg - Fakhar Black -->
             <div class="image-card">
-                <img src= P2.jpg
-                     alt="Fakhar Black - Dark Elegant Perfume Bottle" 
-                     loading="lazy">
+                <img src="P2.jpg" 
+                     alt="Fakhar Black - Dark Elegant Perfume" 
+                     loading="lazy"
+                     onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;color:var(--gold);font-size:3rem;\'>✦</div>';">
                 <div class="image-caption">
                     <h3>Fakhar Black</h3>
                     <p>Mysterious & Deep</p>
                 </div>
             </div>
 
-            <!-- Image 3: Asad -->
+            <!-- Image 3: P3.jpg - Asad -->
             <div class="image-card">
-                <img src=P3.jpg 
-                     alt="Asad - Spicy Warm Perfume with Tobacco Notes" 
-                     loading="lazy">
+                <img src="P3.jpg" 
+                     alt="Asad - Spicy Warm Perfume" 
+                     loading="lazy"
+                     onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;color:var(--gold);font-size:3rem;\'>◈</div>';">
                 <div class="image-caption">
                     <h3>Asad</h3>
                     <p>Spicy & Warm</p>
                 </div>
             </div>
 
-            <!-- Image 4: Khamrah -->
+            <!-- Image 4: P4.jpg - Khamrah -->
             <div class="image-card">
-                <img src=P4.jpg 
-                     alt="Khamrah - Sweet Gourmand Perfume with Cinnamon and Vanilla" 
-                     loading="lazy">
+                <img src="P4.jpg" 
+                     alt="Khamrah - Sweet Gourmand Perfume" 
+                     loading="lazy"
+                     onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;color:var(--gold);font-size:3rem;\'>⬟</div>';">
                 <div class="image-caption">
                     <h3>Khamrah</h3>
                     <p>Sweet & Gourmand</p>
                 </div>
             </div>
 
-            <!-- Image 5: Raghba -->
+            <!-- Image 5: P5.jpg - Raghba -->
             <div class="image-card">
-                <img src=P5.jpg 
-                     alt="Raghba - Soft Incense Perfume with Vanilla Notes" 
-                     loading="lazy">
+                <img src="P5.jpg" 
+                     alt="Raghba - Soft Incense Perfume" 
+                     loading="lazy"
+                     onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;color:var(--gold);font-size:3rem;\'>⬢</div>';">
                 <div class="image-caption">
                     <h3>Raghba</h3>
                     <p>Soft & Incense</p>
                 </div>
             </div>
 
-            <!-- Image 6: Ejaazi -->
+            <!-- Image 6: P6.jpg - Ejaazi -->
             <div class="image-card">
-                <img src=P6.jpg 
-                     alt="Ejaazi - Fresh Dynamic Citrus Perfume" 
-                     loading="lazy">
+                <img src="P6.jpg" 
+                     alt="Ejaazi - Fresh Dynamic Perfume" 
+                     loading="lazy"
+                     onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;color:var(--gold);font-size:3rem;\'>◉</div>';">
                 <div class="image-caption">
                     <h3>Ejaazi</h3>
                     <p>Fresh & Dynamic</p>
@@ -904,7 +914,7 @@
         </div>
     </section>
 
-    <!-- Product Collection with Images and KSH Prices -->
+    <!-- Product Collection with LOCAL IMAGES and KSH Prices -->
     <section class="gallery-section" style="background: var(--cream);">
         <div class="section-header">
             <span class="section-tag">Featured Products</span>
@@ -912,11 +922,12 @@
             <p style="color: var(--text-light);">All prices in Kenyan Shillings (KSH)</p>
         </div>
         <div class="product-grid">
-            <!-- Product 1 with Image -->
+            <!-- Product 1: P1.jpg -->
             <div class="product-card">
                 <div class="product-image">
-                    <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?w=600&h=400&fit=crop" 
-                         alt="Oud For Glory Perfume">
+                    <img src="P1.jpg" 
+                         alt="Oud For Glory Perfume"
+                         onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;color:var(--gold);font-size:4rem;\'>🜲</div>';">
                     <span class="product-badge">Best Seller</span>
                 </div>
                 <div class="product-info">
@@ -933,11 +944,12 @@
                 </div>
             </div>
 
-            <!-- Product 2 with Image -->
+            <!-- Product 2: P2.jpg -->
             <div class="product-card">
                 <div class="product-image">
-                    <img src="https://images.unsplash.com/photo-1541643600914-78a084bc5465?w=600&h=400&fit=crop" 
-                         alt="Fakhar Black Perfume">
+                    <img src="P2.jpg" 
+                         alt="Fakhar Black Perfume"
+                         onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;color:var(--gold);font-size:4rem;\'>✦</div>';">
                     <span class="product-badge">New</span>
                 </div>
                 <div class="product-info">
@@ -954,11 +966,12 @@
                 </div>
             </div>
 
-            <!-- Product 3 with Image -->
+            <!-- Product 3: P3.jpg -->
             <div class="product-card">
                 <div class="product-image">
-                    <img src="https://images.unsplash.com/photo-1587017539504-67cfbddac569?w=600&h=400&fit=crop" 
-                         alt="Asad Perfume">
+                    <img src="P3.jpg" 
+                         alt="Asad Perfume"
+                         onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;color:var(--gold);font-size:4rem;\'>◈</div>';">
                     <span class="product-badge">Popular</span>
                 </div>
                 <div class="product-info">
@@ -975,11 +988,12 @@
                 </div>
             </div>
 
-            <!-- Product 4 with Image -->
+            <!-- Product 4: P4.jpg -->
             <div class="product-card">
                 <div class="product-image">
-                    <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?w=600&h=400&fit=crop" 
-                         alt="Khamrah Perfume">
+                    <img src="P4.jpg" 
+                         alt="Khamrah Perfume"
+                         onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;color:var(--gold);font-size:4rem;\'>⬟</div>';">
                 </div>
                 <div class="product-info">
                     <p class="product-brand">Lattafa Perfumes</p>
@@ -995,11 +1009,12 @@
                 </div>
             </div>
 
-            <!-- Product 5 with Image -->
+            <!-- Product 5: P5.jpg -->
             <div class="product-card">
                 <div class="product-image">
-                    <img src="https://images.unsplash.com/photo-1523293188086-b15e4af6452e?w=600&h=400&fit=crop" 
-                         alt="Raghba Perfume">
+                    <img src="P5.jpg" 
+                         alt="Raghba Perfume"
+                         onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;color:var(--gold);font-size:4rem;\'>⬢</div>';">
                 </div>
                 <div class="product-info">
                     <p class="product-brand">Lattafa Perfumes</p>
@@ -1015,11 +1030,12 @@
                 </div>
             </div>
 
-            <!-- Product 6 with Image -->
+            <!-- Product 6: P6.jpg -->
             <div class="product-card">
                 <div class="product-image">
-                    <img src="https://images.unsplash.com/photo-1519669011783-4eaa95fa1b7d?w=600&h=400&fit=crop" 
-                         alt="Ejaazi Perfume">
+                    <img src="P6.jpg" 
+                         alt="Ejaazi Perfume"
+                         onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;color:var(--gold);font-size:4rem;\'>◉</div>';">
                     <span class="product-badge">Sale</span>
                 </div>
                 <div class="product-info">
@@ -1038,7 +1054,7 @@
         </div>
     </section>
 
-    <!-- 4 YOUTUBE VIDEOS SECTION - FIXED WITH WORKING VIDEOS -->
+    <!-- 4 YOUTUBE VIDEOS SECTION -->
     <section class="video-section">
         <div class="section-header">
             <span class="section-tag">Video Reviews</span>
@@ -1046,7 +1062,7 @@
             <p style="color: #888;">Watch detailed reviews and perfume commercials</p>
         </div>
         <div class="video-grid">
-            <!-- Video 1: REPEATED - Perfume Commercials Compilation (was video 3) -->
+            <!-- Video 1 -->
             <div class="video-container">
                 <div class="video-wrapper">
                     <iframe src="https://www.youtube.com/embed/MAnb2zWYDus" 
@@ -1061,7 +1077,7 @@
                 </div>
             </div>
 
-            <!-- Video 2: REPEATED - Every Perfume Commercial (was video 4) -->
+            <!-- Video 2 -->
             <div class="video-container">
                 <div class="video-wrapper">
                     <iframe src="https://www.youtube.com/embed/w4DQ2IY2jAI" 
@@ -1076,7 +1092,7 @@
                 </div>
             </div>
 
-            <!-- Video 3: Perfume Commercials Compilation -->
+            <!-- Video 3 -->
             <div class="video-container">
                 <div class="video-wrapper">
                     <iframe src="https://www.youtube.com/embed/MAnb2zWYDus" 
@@ -1091,7 +1107,7 @@
                 </div>
             </div>
 
-            <!-- Video 4: Every Perfume Commercial -->
+            <!-- Video 4 -->
             <div class="video-container">
                 <div class="video-wrapper">
                     <iframe src="https://www.youtube.com/embed/w4DQ2IY2jAI" 
