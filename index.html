@@ -79,6 +79,40 @@
             display: flex;
             gap: 1.5rem;
             color: var(--gold);
+            align-items: center;
+        }
+
+        /* SPECIAL FEATURE 1: Animated Cart Counter */
+        .cart-wrapper {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--gold);
+            color: var(--dark);
+            font-size: 0.7rem;
+            font-weight: 700;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s;
+        }
+
+        .cart-count.bump {
+            animation: cartBump 0.3s ease;
+        }
+
+        @keyframes cartBump {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+            100% { transform: scale(1); }
         }
 
         /* Hero Section */
@@ -172,6 +206,49 @@
             padding-left: 1.5rem;
         }
 
+        /* SPECIAL FEATURE 2: Countdown Timer */
+        .countdown-section {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--darker) 100%);
+            padding: 2rem;
+            border-radius: 20px;
+            margin: 2rem 0;
+            text-align: center;
+            border: 2px solid var(--gold);
+        }
+
+        .countdown-title {
+            color: var(--gold);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .countdown-item {
+            text-align: center;
+        }
+
+        .countdown-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            color: var(--gold);
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .countdown-label {
+            color: #888;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
         /* Video Section */
         .video-section {
             padding: 5rem 5%;
@@ -242,7 +319,7 @@
             font-size: 0.9rem;
         }
 
-        /* Image Gallery with LOCAL IMAGES */
+        /* Image Gallery with WORKING IMAGES */
         .gallery-section {
             padding: 5rem 5%;
             background: var(--cream-dark);
@@ -263,6 +340,13 @@
             box-shadow: 0 10px 40px rgba(0,0,0,0.1);
             aspect-ratio: 4/3;
             background: var(--dark);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .image-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
         }
 
         .image-card img {
@@ -401,7 +485,7 @@
             color: #856404;
         }
 
-        /* Product Cards with LOCAL IMAGES */
+        /* Product Cards with WORKING IMAGES */
         .product-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -417,6 +501,8 @@
             overflow: hidden;
             box-shadow: 0 10px 40px rgba(0,0,0,0.1);
             transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
         }
 
         .product-card:hover {
@@ -440,6 +526,25 @@
 
         .product-card:hover .product-image img {
             transform: scale(1.1);
+        }
+
+        .quick-view {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(212, 175, 55, 0.95);
+            color: var(--dark);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            opacity: 0;
+            transition: all 0.3s;
+            pointer-events: none;
+        }
+
+        .product-card:hover .quick-view {
+            opacity: 1;
         }
 
         .product-badge {
@@ -504,6 +609,133 @@
             background: var(--gold);
             color: var(--dark);
             transform: scale(1.1);
+        }
+
+        /* SPECIAL FEATURE 3: Product Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-overlay.show {
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: #fff;
+            border-radius: 20px;
+            max-width: 800px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--dark);
+            color: var(--gold);
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s;
+        }
+
+        .modal-close:hover {
+            background: var(--gold);
+            color: var(--dark);
+            transform: rotate(90deg);
+        }
+
+        .modal-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .modal-details {
+            padding: 2rem;
+        }
+
+        .modal-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-price {
+            font-size: 1.5rem;
+            color: var(--gold-dark);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .modal-price::before {
+            content: 'KSh ';
+        }
+
+        .modal-description {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-notes {
+            background: var(--cream);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-notes h4 {
+            color: var(--gold-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-button {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            color: var(--dark);
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .modal-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
         }
 
         /* Nested List Section */
@@ -582,7 +814,7 @@
             font-size: 0.6rem;
         }
 
-        /* Special Feature: Scent Finder */
+        /* SPECIAL FEATURE 4: Scent Finder (Enhanced) */
         .scent-finder {
             padding: 5rem 5%;
             background: linear-gradient(135deg, var(--dark) 0%, var(--darker) 100%);
@@ -629,6 +861,7 @@
             background: var(--gold);
             color: var(--dark);
             transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
         }
 
         .recommendation {
@@ -648,6 +881,14 @@
         @keyframes slideIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+
+        .recommendation img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 1rem;
         }
 
         /* Footer */
@@ -738,12 +979,6 @@
             color: #555;
         }
 
-        /* Image Loading Fallback */
-        .image-card img, .product-image img {
-            background: linear-gradient(135deg, #2A2A2A 0%, #1A1A1A 100%);
-            min-height: 100%;
-        }
-
         /* Responsive */
         @media (max-width: 1024px) {
             .two-column,
@@ -759,6 +994,12 @@
             .footer-content {
                 grid-template-columns: repeat(2, 1fr);
             }
+            .countdown-timer {
+                gap: 1rem;
+            }
+            .countdown-number {
+                font-size: 2rem;
+            }
         }
 
         @media (max-width: 768px) {
@@ -773,6 +1014,9 @@
             }
             .footer-content {
                 grid-template-columns: 1fr;
+            }
+            .countdown-timer {
+                flex-wrap: wrap;
             }
         }
     </style>
@@ -792,7 +1036,10 @@
         <div class="nav-icons">
             <span>🔍</span>
             <span>👤</span>
-            <span>🛒</span>
+            <div class="cart-wrapper" onclick="showCart()">
+                <span>🛒</span>
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
         </div>
     </nav>
 
@@ -802,11 +1049,31 @@
             <p class="section-tag" style="color: var(--gold); margin-bottom: 2rem;">Authentic Lattafa Reseller</p>
             <h1>Discover the Art of <span>Oriental</span> Fragrance</h1>
             <p>Udgoon Collection brings you the finest Lattafa perfumes, crafted with precious ingredients and traditional Arabian perfumery expertise. Now available in Kenya with prices in KSH.</p>
+            
+            <!-- SPECIAL: Countdown Timer -->
+            <div class="countdown-section">
+                <p class="countdown-title">⏰ Flash Sale Ends In:</p>
+                <div class="countdown-timer" id="countdown">
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="hours">24</div>
+                        <div class="countdown-label">Hours</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="minutes">00</div>
+                        <div class="countdown-label">Minutes</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number" id="seconds">00</div>
+                        <div class="countdown-label">Seconds</div>
+                    </div>
+                </div>
+            </div>
+            
             <a href="#collection" class="cta-button">Explore Collection</a>
         </div>
     </section>
 
-    <!-- Two Column Section - WITH LOCAL IMAGE P1.jpg -->
+    <!-- Two Column Section -->
     <section class="two-column" id="about">
         <div>
             <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 2rem; color: var(--dark);">The Essence of Arabian Luxury</h2>
@@ -820,239 +1087,253 @@
                 Whether you seek the bold intensity of Oud For Glory or the subtle elegance of Raghba, our collection offers a scent for every personality and occasion. All prices are displayed in KSH for your convenience.
             </p>
         </div>
-        <!-- LOCAL IMAGE P1.jpg -->
-        <div class="image-card" style="height: 500px;">
-            <img src="P1.jpg" 
-                 alt="Udgoon Collection - Luxury Arabian Perfumes" 
-                 onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;color:var(--gold);font-size:4rem;\'>✦</div>';">
+        <!-- WORKING IMAGE: Oud For Glory -->
+        <div class="image-card" style="height: 500px;" onclick="openModal('Oud For Glory', 'https://kimi-web-img.moonshot.cn/img/bestperfumesbargain.co.uk/055ac454f1202e884b0cf3ae292099c2aeee4cea.jpg', 6750, 'A masterpiece of woody sophistication featuring saffron, lavender, and rich agarwood. Perfect for those who appreciate bold, commanding presence.', 'Saffron, Lavender, Agarwood, Patchouli, Musk')">
+            <img src="https://kimi-web-img.moonshot.cn/img/bestperfumesbargain.co.uk/055ac454f1202e884b0cf3ae292099c2aeee4cea.jpg" 
+                 alt="Oud For Glory - Luxury Arabian Perfume" 
+                 loading="lazy">
             <div class="image-caption">
                 <h3>Udgoon Collection</h3>
-                <p>Authentic Lattafa Reseller</p>
+                <p>Click to Quick View</p>
             </div>
         </div>
     </section>
 
-    <!-- 6 LOCAL IMAGES - GALLERY SECTION -->
+    <!-- 6 WORKING IMAGES - GALLERY SECTION -->
     <section class="gallery-section" id="collection">
         <div class="section-header">
             <span class="section-tag">Visual Journey</span>
             <h2 class="section-title">The Collection</h2>
-            <p style="color: var(--text-light);">Explore our curated selection</p>
+            <p style="color: var(--text-light);">Click any image for Quick View</p>
         </div>
         <div class="image-grid">
-            <!-- Image 1: P1.jpg - Oud For Glory -->
-            <div class="image-card">
-                <img src="P1.jpg" 
-                     alt="Oud For Glory - Luxury Arabian Perfume" 
-                     loading="lazy"
-                     onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;color:var(--gold);font-size:3rem;\'>🜲</div>';">
+            <!-- Image 1: Oud For Glory - WORKING -->
+            <div class="image-card" onclick="openModal('Oud For Glory', 'https://kimi-web-img.moonshot.cn/img/bestperfumesbargain.co.uk/055ac454f1202e884b0cf3ae292099c2aeee4cea.jpg', 6750, 'A masterpiece of woody sophistication featuring saffron, lavender, and rich agarwood.', 'Saffron, Lavender, Agarwood, Patchouli, Musk')">
+                <img src="https://kimi-web-img.moonshot.cn/img/bestperfumesbargain.co.uk/055ac454f1202e884b0cf3ae292099c2aeee4cea.jpg" 
+                     alt="Oud For Glory" 
+                     loading="lazy">
                 <div class="image-caption">
                     <h3>Oud For Glory</h3>
-                    <p>Bold & Commanding</p>
+                    <p>Click for Details</p>
                 </div>
             </div>
 
-            <!-- Image 2: P2.jpg - Fakhar Black -->
-            <div class="image-card">
-                <img src="P2.jpg" 
-                     alt="Fakhar Black - Dark Elegant Perfume" 
-                     loading="lazy"
-                     onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;color:var(--gold);font-size:3rem;\'>✦</div>';">
+            <!-- Image 2: Fakhar Black - WORKING -->
+            <div class="image-card" onclick="openModal('Fakhar Black', 'https://kimi-web-img.moonshot.cn/img/fimgs.net/1ac79eea4dcc1471944c13d690ee3c4f23aa1065.jpg', 5700, 'Crisp apple and bergamot open to a heart of lavender and cedarwood. Fresh yet substantial.', 'Apple, Bergamot, Lavender, Cedarwood, Amber')">
+                <img src="https://kimi-web-img.moonshot.cn/img/fimgs.net/1ac79eea4dcc1471944c13d690ee3c4f23aa1065.jpg" 
+                     alt="Fakhar Black" 
+                     loading="lazy">
                 <div class="image-caption">
                     <h3>Fakhar Black</h3>
-                    <p>Mysterious & Deep</p>
+                    <p>Click for Details</p>
                 </div>
             </div>
 
-            <!-- Image 3: P3.jpg - Asad -->
-            <div class="image-card">
-                <img src="P3.jpg" 
-                     alt="Asad - Spicy Warm Perfume" 
-                     loading="lazy"
-                     onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;color:var(--gold);font-size:3rem;\'>◈</div>';">
+            <!-- Image 3: Asad - WORKING -->
+            <div class="image-card" onclick="openModal('Asad', 'https://kimi-web-img.moonshot.cn/img/zaoud.it/c89cceb30afe58ba0579e03ee42d80402c7343dd.jpg', 6300, 'Tobacco and black pepper create a warm, spicy embrace balanced with vanilla and amber.', 'Black Pepper, Tobacco, Vanilla, Amber, Sandalwood')">
+                <img src="https://kimi-web-img.moonshot.cn/img/zaoud.it/c89cceb30afe58ba0579e03ee42d80402c7343dd.jpg" 
+                     alt="Asad" 
+                     loading="lazy">
                 <div class="image-caption">
                     <h3>Asad</h3>
-                    <p>Spicy & Warm</p>
+                    <p>Click for Details</p>
                 </div>
             </div>
 
-            <!-- Image 4: P4.jpg - Khamrah -->
-            <div class="image-card">
-                <img src="P4.jpg" 
-                     alt="Khamrah - Sweet Gourmand Perfume" 
-                     loading="lazy"
-                     onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;color:var(--gold);font-size:3rem;\'>⬟</div>';">
+            <!-- Image 4: Khamrah - WORKING -->
+            <div class="image-card" onclick="openModal('Khamrah', 'https://kimi-web-img.moonshot.cn/img/www.rioperfumes.co.za/6d065bd698207788d1baf823f33eb639d76f3406.jpg', 7200, 'A gourmand delight blending cinnamon, dates, and praline with vanilla and myrrh. Sweet yet sophisticated.', 'Cinnamon, Dates, Praline, Vanilla, Myrrh')">
+                <img src="https://kimi-web-img.moonshot.cn/img/www.rioperfumes.co.za/6d065bd698207788d1baf823f33eb639d76f3406.jpg" 
+                     alt="Khamrah" 
+                     loading="lazy">
                 <div class="image-caption">
                     <h3>Khamrah</h3>
-                    <p>Sweet & Gourmand</p>
+                    <p>Click for Details</p>
                 </div>
             </div>
 
-            <!-- Image 5: P5.jpg - Raghba -->
-            <div class="image-card">
-                <img src="P5.jpg" 
-                     alt="Raghba - Soft Incense Perfume" 
-                     loading="lazy"
-                     onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;color:var(--gold);font-size:3rem;\'>⬢</div>';">
+            <!-- Image 5: Raghba - WORKING -->
+            <div class="image-card" onclick="openModal('Raghba', 'https://kimi-web-img.moonshot.cn/img/m.media-amazon.com/19e5e2d4f1713bdc88b0f986d14cb54fd8ec567a.jpg', 5250, 'Soft incense with sugar cane and vanilla. Perfect for daily wear and special occasions.', 'Incense, Sugar Cane, Vanilla, Sandalwood, Musk')">
+                <img src="https://kimi-web-img.moonshot.cn/img/m.media-amazon.com/19e5e2d4f1713bdc88b0f986d14cb54fd8ec567a.jpg" 
+                     alt="Raghba" 
+                     loading="lazy">
                 <div class="image-caption">
                     <h3>Raghba</h3>
-                    <p>Soft & Incense</p>
+                    <p>Click for Details</p>
                 </div>
             </div>
 
-            <!-- Image 6: P6.jpg - Ejaazi -->
-            <div class="image-card">
-                <img src="P6.jpg" 
-                     alt="Ejaazi - Fresh Dynamic Perfume" 
-                     loading="lazy"
-                     onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;color:var(--gold);font-size:3rem;\'>◉</div>';">
+            <!-- Image 6: Ejaazi - WORKING -->
+            <div class="image-card" onclick="openModal('Ejaazi', 'https://kimi-web-img.moonshot.cn/img/lattafa.com/a944af5c52c3bf6fe30e725000953de2164be82a.jpg', 6000, 'Citrus and spices with woody notes and amber. Dynamic and fresh for the modern individual.', 'Citrus, Spices, Woody Notes, Amber, Leather')">
+                <img src="https://kimi-web-img.moonshot.cn/img/lattafa.com/a944af5c52c3bf6fe30e725000953de2164be82a.jpg" 
+                     alt="Ejaazi" 
+                     loading="lazy">
                 <div class="image-caption">
                     <h3>Ejaazi</h3>
-                    <p>Fresh & Dynamic</p>
+                    <p>Click for Details</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Product Collection with LOCAL IMAGES and KSH Prices -->
+    <!-- Product Collection with WORKING IMAGES -->
     <section class="gallery-section" style="background: var(--cream);">
         <div class="section-header">
             <span class="section-tag">Featured Products</span>
             <h2 class="section-title">Shop Now</h2>
-            <p style="color: var(--text-light);">All prices in Kenyan Shillings (KSH)</p>
+            <p style="color: var(--text-light);">All prices in Kenyan Shillings (KSH) - Click for Quick View</p>
         </div>
         <div class="product-grid">
-            <!-- Product 1: P1.jpg -->
-            <div class="product-card">
+            <!-- Product 1: Oud For Glory - WORKING IMAGE -->
+            <div class="product-card" onclick="openModal('Oud For Glory', 'https://kimi-web-img.moonshot.cn/img/bestperfumesbargain.co.uk/055ac454f1202e884b0cf3ae292099c2aeee4cea.jpg', 6750, 'A masterpiece of woody sophistication.', 'Saffron, Lavender, Agarwood, Patchouli, Musk')">
                 <div class="product-image">
-                    <img src="P1.jpg" 
-                         alt="Oud For Glory Perfume"
-                         onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;color:var(--gold);font-size:4rem;\'>🜲</div>';">
+                    <img src="https://kimi-web-img.moonshot.cn/img/bestperfumesbargain.co.uk/055ac454f1202e884b0cf3ae292099c2aeee4cea.jpg" 
+                         alt="Oud For Glory">
+                    <span class="quick-view">Quick View</span>
                     <span class="product-badge">Best Seller</span>
                 </div>
                 <div class="product-info">
                     <p class="product-brand">Lattafa Perfumes</p>
                     <h3 class="product-name">Oud For Glory</h3>
-                    <p class="product-notes">Saffron, Lavender, Agarwood, Patchouli, Musk</p>
+                    <p class="product-notes">Saffron, Lavender, Agarwood...</p>
                     <div class="product-footer">
                         <div>
                             <span class="price">6,750</span>
                             <span class="price-original">9,750</span>
                         </div>
-                        <button class="add-to-cart">+</button>
+                        <button class="add-to-cart" onclick="event.stopPropagation(); addToCart()">+</button>
                     </div>
                 </div>
             </div>
 
-            <!-- Product 2: P2.jpg -->
-            <div class="product-card">
+            <!-- Product 2: Fakhar Black - WORKING IMAGE -->
+            <div class="product-card" onclick="openModal('Fakhar Black', 'https://kimi-web-img.moonshot.cn/img/fimgs.net/1ac79eea4dcc1471944c13d690ee3c4f23aa1065.jpg', 5700, 'Crisp apple and bergamot.', 'Apple, Bergamot, Lavender, Cedarwood, Amber')">
                 <div class="product-image">
-                    <img src="P2.jpg" 
-                         alt="Fakhar Black Perfume"
-                         onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;color:var(--gold);font-size:4rem;\'>✦</div>';">
+                    <img src="https://kimi-web-img.moonshot.cn/img/fimgs.net/1ac79eea4dcc1471944c13d690ee3c4f23aa1065.jpg" 
+                         alt="Fakhar Black">
+                    <span class="quick-view">Quick View</span>
                     <span class="product-badge">New</span>
                 </div>
                 <div class="product-info">
                     <p class="product-brand">Lattafa Perfumes</p>
                     <h3 class="product-name">Fakhar Black</h3>
-                    <p class="product-notes">Apple, Bergamot, Lavender, Cedarwood, Amber</p>
+                    <p class="product-notes">Apple, Bergamot, Lavender...</p>
                     <div class="product-footer">
                         <div>
                             <span class="price">5,700</span>
                             <span class="price-original">8,250</span>
                         </div>
-                        <button class="add-to-cart">+</button>
+                        <button class="add-to-cart" onclick="event.stopPropagation(); addToCart()">+</button>
                     </div>
                 </div>
             </div>
 
-            <!-- Product 3: P3.jpg -->
-            <div class="product-card">
+            <!-- Product 3: Asad - WORKING IMAGE -->
+            <div class="product-card" onclick="openModal('Asad', 'https://kimi-web-img.moonshot.cn/img/zaoud.it/c89cceb30afe58ba0579e03ee42d80402c7343dd.jpg', 6300, 'Warm, spicy embrace.', 'Black Pepper, Tobacco, Vanilla, Amber, Sandalwood')">
                 <div class="product-image">
-                    <img src="P3.jpg" 
-                         alt="Asad Perfume"
-                         onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;color:var(--gold);font-size:4rem;\'>◈</div>';">
+                    <img src="https://kimi-web-img.moonshot.cn/img/zaoud.it/c89cceb30afe58ba0579e03ee42d80402c7343dd.jpg" 
+                         alt="Asad">
+                    <span class="quick-view">Quick View</span>
                     <span class="product-badge">Popular</span>
                 </div>
                 <div class="product-info">
                     <p class="product-brand">Lattafa Perfumes</p>
                     <h3 class="product-name">Asad</h3>
-                    <p class="product-notes">Black Pepper, Tobacco, Vanilla, Amber, Sandalwood</p>
+                    <p class="product-notes">Black Pepper, Tobacco...</p>
                     <div class="product-footer">
                         <div>
                             <span class="price">6,300</span>
                             <span class="price-original">9,000</span>
                         </div>
-                        <button class="add-to-cart">+</button>
+                        <button class="add-to-cart" onclick="event.stopPropagation(); addToCart()">+</button>
                     </div>
                 </div>
             </div>
 
-            <!-- Product 4: P4.jpg -->
-            <div class="product-card">
+            <!-- Product 4: Khamrah - WORKING IMAGE -->
+            <div class="product-card" onclick="openModal('Khamrah', 'https://kimi-web-img.moonshot.cn/img/www.rioperfumes.co.za/6d065bd698207788d1baf823f33eb639d76f3406.jpg', 7200, 'Gourmand delight with cinnamon.', 'Cinnamon, Dates, Praline, Vanilla, Myrrh')">
                 <div class="product-image">
-                    <img src="P4.jpg" 
-                         alt="Khamrah Perfume"
-                         onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;color:var(--gold);font-size:4rem;\'>⬟</div>';">
+                    <img src="https://kimi-web-img.moonshot.cn/img/www.rioperfumes.co.za/6d065bd698207788d1baf823f33eb639d76f3406.jpg" 
+                         alt="Khamrah">
+                    <span class="quick-view">Quick View</span>
                 </div>
                 <div class="product-info">
                     <p class="product-brand">Lattafa Perfumes</p>
                     <h3 class="product-name">Khamrah</h3>
-                    <p class="product-notes">Cinnamon, Dates, Praline, Vanilla, Myrrh</p>
+                    <p class="product-notes">Cinnamon, Dates, Praline...</p>
                     <div class="product-footer">
                         <div>
                             <span class="price">7,200</span>
                             <span class="price-original">10,500</span>
                         </div>
-                        <button class="add-to-cart">+</button>
+                        <button class="add-to-cart" onclick="event.stopPropagation(); addToCart()">+</button>
                     </div>
                 </div>
             </div>
 
-            <!-- Product 5: P5.jpg -->
-            <div class="product-card">
+            <!-- Product 5: Raghba - WORKING IMAGE -->
+            <div class="product-card" onclick="openModal('Raghba', 'https://kimi-web-img.moonshot.cn/img/m.media-amazon.com/19e5e2d4f1713bdc88b0f986d14cb54fd8ec567a.jpg', 5250, 'Soft incense fragrance.', 'Incense, Sugar Cane, Vanilla, Sandalwood, Musk')">
                 <div class="product-image">
-                    <img src="P5.jpg" 
-                         alt="Raghba Perfume"
-                         onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;color:var(--gold);font-size:4rem;\'>⬢</div>';">
+                    <img src="https://kimi-web-img.moonshot.cn/img/m.media-amazon.com/19e5e2d4f1713bdc88b0f986d14cb54fd8ec567a.jpg" 
+                         alt="Raghba">
+                    <span class="quick-view">Quick View</span>
                 </div>
                 <div class="product-info">
                     <p class="product-brand">Lattafa Perfumes</p>
                     <h3 class="product-name">Raghba</h3>
-                    <p class="product-notes">Incense, Sugar Cane, Vanilla, Sandalwood, Musk</p>
+                    <p class="product-notes">Incense, Sugar Cane, Vanilla...</p>
                     <div class="product-footer">
                         <div>
                             <span class="price">5,250</span>
                             <span class="price-original">7,500</span>
                         </div>
-                        <button class="add-to-cart">+</button>
+                        <button class="add-to-cart" onclick="event.stopPropagation(); addToCart()">+</button>
                     </div>
                 </div>
             </div>
 
-            <!-- Product 6: P6.jpg -->
-            <div class="product-card">
+            <!-- Product 6: Ejaazi - WORKING IMAGE -->
+            <div class="product-card" onclick="openModal('Ejaazi', 'https://kimi-web-img.moonshot.cn/img/lattafa.com/a944af5c52c3bf6fe30e725000953de2164be82a.jpg', 6000, 'Citrus and spices.', 'Citrus, Spices, Woody Notes, Amber, Leather')">
                 <div class="product-image">
-                    <img src="P6.jpg" 
-                         alt="Ejaazi Perfume"
-                         onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;color:var(--gold);font-size:4rem;\'>◉</div>';">
+                    <img src="https://kimi-web-img.moonshot.cn/img/lattafa.com/a944af5c52c3bf6fe30e725000953de2164be82a.jpg" 
+                         alt="Ejaazi">
+                    <span class="quick-view">Quick View</span>
                     <span class="product-badge">Sale</span>
                 </div>
                 <div class="product-info">
                     <p class="product-brand">Lattafa Perfumes</p>
                     <h3 class="product-name">Ejaazi</h3>
-                    <p class="product-notes">Citrus, Spices, Woody Notes, Amber, Leather</p>
+                    <p class="product-notes">Citrus, Spices, Woody Notes...</p>
                     <div class="product-footer">
                         <div>
                             <span class="price">6,000</span>
                             <span class="price-original">8,700</span>
                         </div>
-                        <button class="add-to-cart">+</button>
+                        <button class="add-to-cart" onclick="event.stopPropagation(); addToCart()">+</button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- SPECIAL FEATURE: Product Quick View Modal -->
+    <div class="modal-overlay" id="productModal" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <img class="modal-image" id="modalImage" src="" alt="">
+            <div class="modal-details">
+                <h2 class="modal-title" id="modalTitle"></h2>
+                <p class="modal-price" id="modalPrice"></p>
+                <p class="modal-description" id="modalDescription"></p>
+                <div class="modal-notes">
+                    <h4>Fragrance Notes:</h4>
+                    <p id="modalNotes"></p>
+                </div>
+                <button class="modal-button" onclick="addToCart(); closeModal();">
+                    Add to Cart - KSh <span id="modalButtonPrice"></span>
+                </button>
+            </div>
+        </div>
+    </div>
 
     <!-- 4 YOUTUBE VIDEOS SECTION -->
     <section class="video-section">
@@ -1062,7 +1343,7 @@
             <p style="color: #888;">Watch detailed reviews and perfume commercials</p>
         </div>
         <div class="video-grid">
-            <!-- Video 1 -->
+            <!-- Video 1: REPEATED WORKING VIDEO -->
             <div class="video-container">
                 <div class="video-wrapper">
                     <iframe src="https://www.youtube.com/embed/MAnb2zWYDus" 
@@ -1077,7 +1358,7 @@
                 </div>
             </div>
 
-            <!-- Video 2 -->
+            <!-- Video 2: REPEATED WORKING VIDEO -->
             <div class="video-container">
                 <div class="video-wrapper">
                     <iframe src="https://www.youtube.com/embed/w4DQ2IY2jAI" 
@@ -1092,7 +1373,7 @@
                 </div>
             </div>
 
-            <!-- Video 3 -->
+            <!-- Video 3: WORKING VIDEO -->
             <div class="video-container">
                 <div class="video-wrapper">
                     <iframe src="https://www.youtube.com/embed/MAnb2zWYDus" 
@@ -1107,7 +1388,7 @@
                 </div>
             </div>
 
-            <!-- Video 4 -->
+            <!-- Video 4: WORKING VIDEO -->
             <div class="video-container">
                 <div class="video-wrapper">
                     <iframe src="https://www.youtube.com/embed/w4DQ2IY2jAI" 
@@ -1295,7 +1576,7 @@
         </div>
     </section>
 
-    <!-- Special Feature: Scent Finder -->
+    <!-- SPECIAL FEATURE 4: Scent Finder -->
     <section class="scent-finder">
         <div class="finder-container">
             <h3>✦ Find Your Signature Scent ✦</h3>
@@ -1307,9 +1588,11 @@
                 <button class="finder-btn" onclick="showRec('fresh')">Fresh Citrus</button>
             </div>
             <div id="recommendation" class="recommendation">
+                <img id="recImage" src="" alt="" style="display: none;">
                 <h4 id="rec-title" style="color: var(--gold); margin-bottom: 1rem; font-family: 'Playfair Display', serif;"></h4>
                 <p id="rec-desc" style="color: #ccc;"></p>
                 <p id="rec-price" style="color: var(--gold); margin-top: 1rem; font-weight: 700;"></p>
+                <button class="modal-button" style="margin-top: 1rem;" onclick="addToCart()">Add to Cart</button>
             </div>
         </div>
     </section>
@@ -1360,27 +1643,95 @@
     </footer>
 
     <script>
+        // SPECIAL FEATURE 1: Cart Counter with Animation
+        let cartItems = 0;
+        
+        function addToCart() {
+            cartItems++;
+            const cartCount = document.getElementById('cartCount');
+            cartCount.textContent = cartItems;
+            cartCount.classList.add('bump');
+            setTimeout(() => cartCount.classList.remove('bump'), 300);
+            
+            // Visual feedback
+            alert(`Added to cart! Total items: ${cartItems}`);
+        }
+
+        function showCart() {
+            if (cartItems === 0) {
+                alert('Your cart is empty. Start shopping!');
+            } else {
+                alert(`You have ${cartItems} item(s) in your cart.`);
+            }
+        }
+
+        // SPECIAL FEATURE 2: Countdown Timer
+        function updateCountdown() {
+            const now = new Date();
+            const tomorrow = new Date(now);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            tomorrow.setHours(0, 0, 0, 0);
+            
+            const diff = tomorrow - now;
+            
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // SPECIAL FEATURE 3: Product Modal (Quick View)
+        function openModal(title, image, price, description, notes) {
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalImage').src = image;
+            document.getElementById('modalPrice').textContent = price.toLocaleString();
+            document.getElementById('modalButtonPrice').textContent = price.toLocaleString();
+            document.getElementById('modalDescription').textContent = description;
+            document.getElementById('modalNotes').textContent = notes;
+            
+            document.getElementById('productModal').classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(event) {
+            if (!event || event.target.id === 'productModal' || event.target.className === 'modal-close') {
+                document.getElementById('productModal').classList.remove('show');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // SPECIAL FEATURE 4: Scent Finder with Images
         function showRec(type) {
             const recommendations = {
                 'oud': { 
                     title: 'Oud For Glory', 
-                    desc: 'A masterpiece of woody sophistication featuring saffron, lavender, and rich agarwood.',
-                    price: 'KSh 6,750'
+                    desc: 'A masterpiece of woody sophistication featuring saffron, lavender, and rich agarwood. Perfect for those who appreciate bold, commanding presence.',
+                    price: 'KSh 6,750',
+                    image: 'https://kimi-web-img.moonshot.cn/img/bestperfumesbargain.co.uk/055ac454f1202e884b0cf3ae292099c2aeee4cea.jpg'
                 },
                 'spicy': { 
                     title: 'Asad', 
-                    desc: 'Tobacco and black pepper create a warm, spicy embrace balanced with vanilla and amber.',
-                    price: 'KSh 6,300'
+                    desc: 'Tobacco and black pepper create a warm, spicy embrace balanced with vanilla and amber. Ideal for evening wear and special occasions.',
+                    price: 'KSh 6,300',
+                    image: 'https://kimi-web-img.moonshot.cn/img/zaoud.it/c89cceb30afe58ba0579e03ee42d80402c7343dd.jpg'
                 },
                 'sweet': { 
                     title: 'Khamrah', 
-                    desc: 'A gourmand delight blending cinnamon, dates, and praline with vanilla and myrrh.',
-                    price: 'KSh 7,200'
+                    desc: 'A gourmand delight blending cinnamon, dates, and praline with vanilla and myrrh. Sweet yet sophisticated, perfect for cold weather.',
+                    price: 'KSh 7,200',
+                    image: 'https://kimi-web-img.moonshot.cn/img/www.rioperfumes.co.za/6d065bd698207788d1baf823f33eb639d76f3406.jpg'
                 },
                 'fresh': { 
                     title: 'Fakhar Black', 
-                    desc: 'Crisp apple and bergamot open to a heart of lavender and cedarwood.',
-                    price: 'KSh 5,700'
+                    desc: 'Crisp apple and bergamot open to a heart of lavender and cedarwood. Fresh yet substantial, suitable for daily wear.',
+                    price: 'KSh 5,700',
+                    image: 'https://kimi-web-img.moonshot.cn/img/fimgs.net/1ac79eea4dcc1471944c13d690ee3c4f23aa1065.jpg'
                 }
             };
             
@@ -1388,11 +1739,26 @@
             document.getElementById('rec-title').textContent = 'Recommended: ' + rec.title;
             document.getElementById('rec-desc').textContent = rec.desc;
             document.getElementById('rec-price').textContent = rec.price;
+            
+            const recImage = document.getElementById('recImage');
+            recImage.src = rec.image;
+            recImage.style.display = 'inline-block';
+            recImage.style.width = '150px';
+            recImage.style.height = '150px';
+            recImage.style.objectFit = 'cover';
+            recImage.style.borderRadius = '15px';
+            recImage.style.marginBottom = '1rem';
+            
             document.getElementById('recommendation').classList.add('show');
             
             document.querySelectorAll('.finder-btn').forEach(btn => btn.classList.remove('active'));
             event.target.classList.add('active');
         }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
     </script>
 
 </body>
